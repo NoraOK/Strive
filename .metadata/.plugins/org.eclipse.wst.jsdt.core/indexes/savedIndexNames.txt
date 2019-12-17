@@ -1,5 +1,7 @@
 INDEX VERSION 1.4+/Users/noraokeeffe/Desktop/dojo_assignments/Projects/Strive Project/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
 2972531824.index
 520687486.index
+3891297396.index
 831720719.index
+3585430582.index
 3217087324.index

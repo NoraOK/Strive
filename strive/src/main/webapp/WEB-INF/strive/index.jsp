@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title> Strive</title>
+<title> Strive </title>
 </head>
 <body>
+	<div class="container">
+	
 
+	</div>
 </body>
 </html>

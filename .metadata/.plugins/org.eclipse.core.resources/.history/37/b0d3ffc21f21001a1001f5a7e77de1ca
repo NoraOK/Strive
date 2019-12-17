@@ -1,0 +1,6 @@
+package com.noraokeeffe.strive.services;
+
+@Service
+public class GoalService {
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.noraokeeffe.strive.services.GoalServer&apos; to &apos;GoalService&apos;&#x0A;- Original project: &apos;strive&apos;&#x0A;- Original element: &apos;com.noraokeeffe.strive.services.GoalServer&apos;&#x0A;- Renamed element: &apos;com.noraokeeffe.strive.services.GoalService&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;GoalServer&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;com.noraokeeffe.strive.services{GoalServer.java[GoalServer" matchStrategy="1" name="GoalService" qualified="false" references="true" similarDeclarations="false" stamp="1576623013293" textual="false" version="1.0"/>
+</session>

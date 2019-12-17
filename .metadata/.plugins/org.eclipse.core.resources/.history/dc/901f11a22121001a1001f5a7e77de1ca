@@ -1,0 +1,5 @@
+package com.noraokeeffe.strive.controllers;
+
+public class UserController {
+
+}

@@ -1,20 +1,9 @@
 INDEX VERSION 1.131+/Users/noraokeeffe/Desktop/dojo_assignments/Projects/Strive Project/.metadata/.plugins/org.eclipse.jdt.core
-12222539.index
-3611580265.index
-2008944393.index
-829244192.index
-4000958733.index
+1852741088.index
 3944256364.index
-1083769800.index
-2193054314.index
-3560168362.index
-428318631.index
-3563295237.index
-1701939018.index
+3939697993.index
+4117686148.index
+2397777895.index
 3891297396.index
-2182171434.index
-3546182967.index
-1402772194.index
-1773774860.index
-1271342938.index
-2643447108.index
+1188847842.index
+2547784295.index

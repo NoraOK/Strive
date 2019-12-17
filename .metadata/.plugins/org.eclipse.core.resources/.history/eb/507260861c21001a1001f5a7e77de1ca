@@ -1,0 +1,7 @@
+package com.noraokeeffe.strive.models;
+
+@Entity
+A
+public class Goal {
+
+}
