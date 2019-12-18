@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.container{
+	
+}
+
+.logo{
+	font-family:'Nunito', sans-serif;
+	font-size: 40px;
+	
+}
+.img{
+	background-color: white;
+	width: 35px;
+}

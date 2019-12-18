@@ -1,0 +1,13 @@
+.middle{
+	height: 2200px;
+	background-color: #7cdde6;
+	padding: 80px 40px;
+}
+
+.moon_img{
+	padding-top: 200px;
+	width: 200px;
+    background-color: #7cdde6;
+	
+	
+}
