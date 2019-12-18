@@ -1,8 +1,10 @@
 package com.noraokeeffe.strive.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.noraokeeffe.strive.models.User;
 import com.noraokeeffe.strive.services.GoalService;
 import com.noraokeeffe.strive.services.UserService;
 
@@ -26,6 +28,9 @@ public class UserController {
 		return "strive/newGoal.jsp";
 	}
 	
-	
+	@RequestMapping("/ie")
+	public String financesForm(@ModelAttribute("user") User user) {
+		return "strive/ie.jsp";
+	}
 	
 }
