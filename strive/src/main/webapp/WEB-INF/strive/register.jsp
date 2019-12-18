@@ -1,37 +1,53 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Strive | Sign Up</title>
-</head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="/css/register.css" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,400,700&display=swap" rel="stylesheet"></head>
 <body>
 	<div>
 		<jsp:include page="headerNoLogout.jsp"/>
 	</div>
 	<div class="body">
-		<p class="slogan">Start Setting Your Goals</p>
-		<p>Strive makes it easy to set and track your financial goals.</p>
-    
-    	<p style="color:red;"><form:errors path="user.*"/></p>
-    
-    	<form:form method="POST" action="/registration" modelAttribute="user">
-	        <p>
-	            <p style="color:red;"><form:errors path="email"/></p>
-	            <form:input path="email" class="form-control" placeholder="Email"/>
-	        </p>
-	        <p>
-	            <p style="color:red;"><form:errors path="password"/></p>
-	            <form:password path="password" class="form-control" placeholder="Password"/>
-	        </p>
-	        <p>
-	            <p style="color:red;"><form:errors path="passwordConfirmation"/></p>
-	            <form:password path="passwordConfirmation" class="form-control" placeholder="Confirm password"/>
-	        </p>
-	        <input type="submit" value="Sign Up"/>
-    	</form:form>
+		<div class="container col-4">
+			<p class="slogan">Start Setting Your Goals Today</p>
+			<p class="about">Strive makes it easy to set and track your financial goals.</p>
+	       
+	    	<form:form method="POST" action="/register" modelAttribute="user">
+	    		<div class="row">
+	    			<div class="col">
+		            	<p class="error"><form:errors path="firstName"/></p>
+		            	<form:input path="firstName" class="form-control form-control-lg" placeholder="First name"/>
+		            </div>
+		            <div class="col">
+			            <p class="error"><form:errors path="lastName"/></p>
+			            <form:input path="lastName" class="form-control form-control-lg" placeholder="Last name"/>
+		        	</div>
+		        </div>
+		        <p>
+		            <p class="error"><form:errors path="email"/></p>
+		            <form:input path="email" class="form-control form-control-lg" placeholder="Email"/>
+		        </p>
+		        <p class="error"><c:out value="${pw_error}"/></p>
+		        <p>
+		            <p class="error""><form:errors path="password"/></p>
+		            <form:password path="password" class="form-control form-control-lg" placeholder="Password"/>
+		        </p>
+		        <p>
+		            <p class="error""><form:errors path="passwordConfirmation"/></p>
+		            <form:password path="passwordConfirmation" class="form-control form-control-lg" placeholder="Confirm password"/>
+		        </p>
+		        <input type="submit" value="Sign Up" class="sign_up"/>
+		        <p class="already">Already a member? <a href="/login">Sign in here.</a></p>
+	    	</form:form>
+    	</div>
 	</div>
 </body>
 </html>

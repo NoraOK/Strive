@@ -1,0 +1,58 @@
+.login{
+	font-family: 'Nunito', sans-serif;
+	margin-top: 200px;
+	margin-left: 40px;
+} 	
+
+.water_img{
+	opacity: .75;
+	width: 50%;
+	margin-top: -25%;
+}
+input[type=text]{
+  background-color: #FAFAFA
+}
+
+input[type=text]:focus {
+  border: 2px solid #EF8F63;
+  padding: 5px;
+}
+input[type=password]{
+  background-color: #FAFAFA
+	
+}
+input[type=password]:focus {
+  border: 2px solid #EF8F63;
+  padding: 5px;
+}
+
+.welcome{
+	font-size: 35px;
+}
+.label{
+	font-size: 15px;
+}
+
+.sign_in{
+	border:2px solid #EF8F63 ;
+	border-radius: 8px;
+	background-color: #EF8F63;
+	padding: 12px 25px;
+	color: white;
+}
+
+.sign_in:hover{
+	border:2px solid #F9AD86 ;
+	border-radius: 8px;
+	background-color: #F9AD86;
+	padding: 12px 25px;
+	color: white;
+}
+input[type=submit]{
+	margin-top: 40px;
+}
+.forgot{
+	font-size: 12px;
+	font-weight: bold;
+	color: #F9AD86
+}

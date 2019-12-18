@@ -4,13 +4,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Strive | Home</title>
 </head>
 <body>
 	<div>
 		<jsp:include page="header.jsp"/>
 	</div>
-	<div class="container">
+	<div class="body">
+		<div class="info">
+			<p> Welcome User! </p>
+			<p>Current Savings</p> 
+			<p>$ -</p>
+			<p>Current Income (Monthly)</p> 
+			<p>$ -</p>
+			<p>Current Expenses (Monthly)</p> 
+			<p>$ -</p>
+		</div>
 	</div>
 </body>
 </html>
