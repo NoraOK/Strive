@@ -12,6 +12,7 @@
 <title>Strive for a new goal!</title>
 </head>
 <body>
+<<<<<<< HEAD
 	<div>
 		<jsp:include page="header.jsp"/>
 	</div>

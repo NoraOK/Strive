@@ -12,10 +12,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+<<<<<<< HEAD
 	<div>
 		<jsp:include page="header.jsp"/>
 	</div>
 	<div class="body">
+=======
+	<div class="container">
 		<h3>Update your finances</h3>
 
 		<form:form action="/strive/updateFinances" method="post"
@@ -38,6 +41,7 @@
 			<a class="btn btn-warning" href="/userHome">Cancel</a>
 		</form:form>
 
+>>>>>>> 3c66a6558d3c27b89dde3547deec6a9da3f0c760
 	</div>
 </body>
 </html>
