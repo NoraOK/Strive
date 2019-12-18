@@ -4,14 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title> Strive </title>
+<title>Insert title here</title>
 </head>
 <body>
-	<div class="container">
-		<div class="header">
-			<jsp:include page="indexHeader.jsp"/>
-		</div>	
-		
-	</div>
+
 </body>
 </html>
