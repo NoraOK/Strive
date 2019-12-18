@@ -32,6 +32,7 @@ public class User {
 	@Size(min=1, message="Please enter a last name")
 	private String lastName;
 	 
+	@Size(min=1, message="Please enter an email")
 	@Email(message="Email Not Valid")
 	private String email;
 	

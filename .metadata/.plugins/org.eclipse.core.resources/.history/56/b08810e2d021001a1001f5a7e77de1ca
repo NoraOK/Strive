@@ -1,0 +1,42 @@
+.body{
+	padding-top: 150px;
+	font-family: 'Nunito', sans-serif;
+	width: 60%;
+}
+
+
+.slogan{
+	font-size: 38px;
+	font-weight: light;
+}
+
+.about{
+	font-size: 20px;
+}
+
+
+
+/* ------------------------------------- */
+/*           Sign up button              */
+/* ------------------------------------- */
+
+
+.sign_up{
+	border:2px solid #EF8F63 ;
+	border-radius: 8px;
+	background-color: #EF8F63;
+	padding: 12px 25px;
+	color: white;
+}
+
+.sign_up:hover{
+	border:2px solid #F9AD86 ;
+	border-radius: 8px;
+	background-color: #F9AD86;
+	padding: 12px 25px;
+	color: white;
+}
+input[type=submit]{
+	margin-top: 40px;
+}
+

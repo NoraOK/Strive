@@ -1,0 +1,81 @@
+package com.noraokeeffe.strive.controllers;
+
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.noraokeeffe.strive.models.Goal;
+import com.noraokeeffe.strive.models.User;
+import com.noraokeeffe.strive.services.GoalService;
+import com.noraokeeffe.strive.services.UserService;
+
+@Controller
+public class UserController {
+	private final UserService userService;
+	private final GoalService goalService;
+	
+	public UserController(UserService userService, GoalService goalService) {
+		this.userService = userService;
+		this.goalService = goalService;
+	}
+	
+	@RequestMapping("/")
+	public String index() {
+		return "strive/index.jsp";
+	}
+	
+	@RequestMapping("/register")
+	public String registrationPage() {
+		return "strive/register.jsp";
+	}
+	
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	 public String registerUser(@Valid @ModelAttribute("user") User user, BindingResult result, HttpSession session, RedirectAttributes attribute) {
+		 if (result.hasErrors()) {
+	          return "strive/register.jsp";
+	     }
+	     else if(!user.getPassword().equals(user.getPasswordConfirmation())) {
+	         attribute.addFlashAttribute("error", "Passwords do not match");
+	         return "redirect:/register";
+	         
+	     }else if(userService.checkUser(user.getEmail())) {
+	         attribute.addFlashAttribute("error", "User already exists");
+	         return "redirect:/registration";
+	     }else {
+	         User new_user = userService.registerUser(user);
+	         session.setAttribute("loggedIn", user);
+	         session.setAttribute("user_id", new_user.getId());
+	         return "redirect:/home" ;
+	     }
+	 }
+	
+	@RequestMapping("/home")
+	public String userHomePage() {
+		return "strive/userHome.jsp"
+	}
+	
+	
+	@RequestMapping("/login")
+	public String loginPage() {
+		return "strive/login.jsp";
+	}
+	
+	@RequestMapping("/newGoal")
+	public String newGoal(@ModelAttribute("goal") Goal goal) {
+		return "strive/newGoal.jsp";
+	}
+	
+	@RequestMapping("/ie")
+	public String financesForm(@ModelAttribute("user") User user) {
+		return "strive/ie.jsp";
+	}
+	
+	
+	
+}
