@@ -1,3 +1,10 @@
 .body{
 	padding-top: 150px;
 }
+.articles{
+	display: inline-block;
+	height: 400px;
+	overflow: hidden;
+	padding: 25px;
+	vertical-align: top;
+}
