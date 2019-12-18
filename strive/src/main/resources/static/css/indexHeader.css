@@ -43,13 +43,13 @@ a:hover {
 }
 
 .button2{
-	border: solid 1.5px black;
+	border: solid 1.5px #F9AD86;
 	border-radius: 8px;
 	padding:  8px;
 }
 
 .button2:hover {
-	background-color: black;
+	background-color: #F9AD86;
 	color: white;
 }
 

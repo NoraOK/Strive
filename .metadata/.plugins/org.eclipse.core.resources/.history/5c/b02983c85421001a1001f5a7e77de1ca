@@ -1,0 +1,12 @@
+.middle{
+	height: 2200px;
+	background-color: #EF8F63;
+	padding: 150px 150px 0px 100px;
+	font-family: 'Nunito', sans-serif;
+}
+
+.slogan{
+	font-weight: bold;
+	font-size: 50px;
+	color: white;
+}

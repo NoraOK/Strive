@@ -19,8 +19,8 @@
 			</div>
 		</div>
 		<div class="buttons d-inline">	
-			<a href="" class="button button1">Sign Up</a>
-			<a href="" class="button button2 ml-2">Sign In</a>
+			<a href="/register" class="button button1">Sign Up</a>
+			<a href="/login" class="button button2 ml-2">Sign In</a>
 		</div>
 	</header>
 </body>
