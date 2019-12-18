@@ -1,0 +1,4 @@
+.middle{
+	height: 2200px;
+	background-color: RGB(123, 149, 199);
+}

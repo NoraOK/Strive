@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+header{
+	box-shadow: 2px 2px 5px;
+}
+
+.logo{
+	font-family:'Nunito', sans-serif;
+	font-size: 38px;
+	
+}
+.img{
+	background-color: white;
+	width: 35px;
+	opacity: .4;
+}

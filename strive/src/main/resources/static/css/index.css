@@ -1,0 +1,49 @@
+
+.middle{
+	height: 2000px;
+	background-color: #EF8F63;
+	padding-top: 150px;
+	font-family: 'Nunito', sans-serif;
+	padding-left: 12.5%;
+	background-color: #EF8F63;
+	
+}
+
+.slogan{
+	font-weight: bold;
+	font-size: 60px;
+	color: white;
+	text-shadow: 2px 2px 5px darkgray;
+}
+
+
+.quote{
+	font-size: 20px;
+	color: lightgray;
+}
+
+.money_img{
+	opacity: .8;
+	width: 350px;
+}
+.signup_button{
+	background-color: #F9AD86;
+	padding:  8px 15px;
+	border-radius: 8px;
+	color: white;
+}
+.signup_button:link {
+  text-decoration: none;
+}
+
+.signup_button:visited {
+  text-decoration: none;
+}
+
+.signup_button:hover {
+	border: solid 1.5px #F9AD86;
+	background-color: #EF8F63;
+	border-radius: 8px;
+	color: white;
+}
+

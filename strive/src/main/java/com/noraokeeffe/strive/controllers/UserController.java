@@ -23,6 +23,16 @@ public class UserController {
 		return "strive/index.jsp";
 	}
 	
+	@RequestMapping("/register")
+	public String registrationPage() {
+		return "strive/register.jsp";
+	}
+	
+	@RequestMapping("/login")
+	public String loginPage() {
+		return "strive/login.jsp";
+	}
+	
 	@RequestMapping("/newGoal")
 	public String newGoal() {
 		return "strive/newGoal.jsp";

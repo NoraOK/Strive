@@ -1,0 +1,28 @@
+
+.middle{
+	height: 2000px;
+	background-color: #EF8F63;
+	padding-top: 150px;
+	font-family: 'Nunito', sans-serif;
+	padding-left: 12.5%;
+	background-color: #EF8F63;
+	
+}
+
+.slogan{
+	font-weight: bold;
+	font-size: 60px;
+	color: white;
+	text-shadow: 2px 2px 5px darkgray;
+}
+
+
+.quote{
+	font-size: 20px;
+	color: lightgray;
+}
+
+.money_img{
+	opacity: .8;
+	width: 400px;
+}
