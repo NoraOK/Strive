@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.noraokeeffe.strive.models.Goal;
 import com.noraokeeffe.strive.models.User;
 import com.noraokeeffe.strive.services.GoalService;
 import com.noraokeeffe.strive.services.UserService;
@@ -34,7 +35,7 @@ public class UserController {
 	}
 	
 	@RequestMapping("/newGoal")
-	public String newGoal() {
+	public String newGoal(@ModelAttribute("goal") Goal goal) {
 		return "strive/newGoal.jsp";
 	}
 	
