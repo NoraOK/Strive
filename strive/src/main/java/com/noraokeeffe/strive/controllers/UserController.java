@@ -21,6 +21,10 @@ public class UserController {
 		return "strive/index.jsp";
 	}
 	
+	@RequestMapping("/newGoal")
+	public String newGoal() {
+		return "strive/newGoal.jsp";
+	}
 	
 	
 	
