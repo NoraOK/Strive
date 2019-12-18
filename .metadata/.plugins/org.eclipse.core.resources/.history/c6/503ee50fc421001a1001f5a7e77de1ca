@@ -43,6 +43,7 @@ public class User {
 	
 	private Double currentIncome;
 	
+	private Double currentExpenses;
 	
 	private Double currentBalance;
 	
@@ -133,15 +134,7 @@ public class User {
 		this.goals = goals;
 	}
 	
-	 public List<UserExpense> getUser_expenses() {
-		return user_expenses;
-	}
-
-	public void setUser_expenses(List<UserExpense> user_expenses) {
-		this.user_expenses = user_expenses;
-	}
-
-	@PrePersist
+	 @PrePersist
 	 protected void onCreate(){
 	     this.createdAt = new Date();
 	 }

@@ -35,7 +35,9 @@ public class Goal {
 	 @FutureOrPresent
 	 @DateTimeFormat(pattern="yyyy-MM-dd")
 	 private Date deadline;
-	 	 
+	 
+	 private Double goalAmt;
+	 
 	 private String goalResult;
 	 
 	 @Column(updatable=false)
@@ -78,23 +80,6 @@ public class Goal {
 		this.user = user;
 	}
 	
-	
-	public Date getDeadline() {
-		return deadline;
-	}
-
-	public void setDeadline(Date deadline) {
-		this.deadline = deadline;
-	} 
-
-	public List<GoalExpense> getGoal_expenses() {
-		return goal_expenses;
-	}
-
-	public void setGoal_expenses(List<GoalExpense> goal_expenses) {
-		this.goal_expenses = goal_expenses;
-	}
-
 	public String getGoalResult() {
 		return goalResult;
 	}

@@ -43,6 +43,7 @@ public class User {
 	
 	private Double currentIncome;
 	
+	private Double currentExpenses;
 	
 	private Double currentBalance;
 	
@@ -55,9 +56,6 @@ public class User {
 	
 	@OneToMany(mappedBy="user", fetch=FetchType.LAZY)
 	private List<Goal> goals;
-	
-	@OneToMany(mappedBy="user", fetch=FetchType.LAZY)
-	private List<UserExpense> user_expenses;
 
 	public User() {}
 
@@ -117,6 +115,14 @@ public class User {
 		this.currentIncome = currentIncome;
 	}
 
+	public Double getCurrentExpenses() {
+		return currentExpenses;
+	}
+
+	public void setCurrentExpenses(Double currentExpenses) {
+		this.currentExpenses = currentExpenses;
+	}
+
 	public Double getCurrentBalance() {
 		return currentBalance;
 	}
@@ -133,15 +139,7 @@ public class User {
 		this.goals = goals;
 	}
 	
-	 public List<UserExpense> getUser_expenses() {
-		return user_expenses;
-	}
-
-	public void setUser_expenses(List<UserExpense> user_expenses) {
-		this.user_expenses = user_expenses;
-	}
-
-	@PrePersist
+	 @PrePersist
 	 protected void onCreate(){
 	     this.createdAt = new Date();
 	 }

@@ -42,8 +42,7 @@ public class User {
 	private String passwordConfirmation;
 	
 	private Double currentIncome;
-	
-	
+		
 	private Double currentBalance;
 	
 	@Column(updatable=false)

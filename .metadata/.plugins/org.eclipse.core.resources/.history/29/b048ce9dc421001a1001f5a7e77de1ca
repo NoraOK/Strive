@@ -1,7 +1,6 @@
 package com.noraokeeffe.strive.models;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -34,8 +32,10 @@ public class Goal {
 	 @NotNull(message="Please enter a date for an event")
 	 @FutureOrPresent
 	 @DateTimeFormat(pattern="yyyy-MM-dd")
-	 private Date deadline;
-	 	 
+	 private Date date;
+	 
+	 private Double goalAmt;
+	 
 	 private String goalResult;
 	 
 	 @Column(updatable=false)
@@ -48,9 +48,6 @@ public class Goal {
 	 @ManyToOne(fetch=FetchType.LAZY)
 	 @JoinColumn(name="user_id")
 	 private User user;
-	 
-	 @OneToMany(mappedBy="goal", fetch=FetchType.LAZY)
-	 private List<GoalExpense> goal_expenses;
 
 	 public Goal() {}
 
@@ -70,6 +67,22 @@ public class Goal {
 		this.goalName = goalName;
 	}
 
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public Double getGoalAmt() {
+		return goalAmt;
+	}
+
+	public void setGoalAmt(Double goalAmt) {
+		this.goalAmt = goalAmt;
+	}
+
 	public User getUser() {
 		return user;
 	}
@@ -78,23 +91,6 @@ public class Goal {
 		this.user = user;
 	}
 	
-	
-	public Date getDeadline() {
-		return deadline;
-	}
-
-	public void setDeadline(Date deadline) {
-		this.deadline = deadline;
-	} 
-
-	public List<GoalExpense> getGoal_expenses() {
-		return goal_expenses;
-	}
-
-	public void setGoal_expenses(List<GoalExpense> goal_expenses) {
-		this.goal_expenses = goal_expenses;
-	}
-
 	public String getGoalResult() {
 		return goalResult;
 	}
