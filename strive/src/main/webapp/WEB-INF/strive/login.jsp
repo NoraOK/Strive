@@ -1,17 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Login | Strive</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="/css/login.css" rel="stylesheet" type="text/css"/>
+	<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div>
-		<jsp:include page="header.jsp"/>
-	</div>
-	<div class="middle">
-	
+<%-- 	<div>
+		<jsp:include page="headerNoLogout.jsp"/>
+	</div> --%>
+	<div class="body row">
+		<img class="water_img col" src="/images/water.jpg">
+		<div class="login col">
+			<p class="welcome">Welcome to Strive</p>
+			<p><c:out value="${error}" /></p>
+    		<form method="post" action="/login">
+		        <p>
+		            <p class="label">Email</p>
+		            <input type="text" id="email" name="email" class="form-control form-control-lg col-7"/>
+		        </p>
+		        <p>
+					<p class="label">Password</p>		            
+					<input type="password" id="password" name="password" class="form-control form-control-lg col-7"/>
+		        </p>
+		        <p class="forgot">Forgot your username or password?</p>
+        		<input type="submit" value="Sign In" class="sign_in"/>
+    		</form> 
+		</div>
 	</div>
 </body>
 </html>

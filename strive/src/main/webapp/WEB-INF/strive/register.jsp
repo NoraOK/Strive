@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<div>
+		<jsp:include page="headerNoLogout.jsp"/>
+	</div>
+	<div class="body">
+	</div>
 </body>
 </html>

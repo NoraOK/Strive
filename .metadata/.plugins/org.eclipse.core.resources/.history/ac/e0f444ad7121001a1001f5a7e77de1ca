@@ -1,0 +1,15 @@
+.login{
+	font-family: 'Nunito', sans-serif;
+	margin-top: 200px;
+} 
+
+.water_img{
+	opacity: .75;
+	width: 50%;
+}
+input[type=text]{
+  background-color: lightblue .25;
+}
+input[type=text]:focus {
+  border: .5px solid #EF8F63;
+}

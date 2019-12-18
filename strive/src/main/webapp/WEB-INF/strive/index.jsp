@@ -15,11 +15,11 @@
 	</div>
 	<div class="middle row">
 		<div class="left col">
-			<p class="slogan">Don't let your financial goals slip away from you</p>
+			<p class="slogan">Don't let your financial goals fly away</p>
 			<p class="quote">“Do not save what is left after spending</p> 
 			<p class="quote"><em>instead spend what is left after saving.”</em></p>
 			<p class="warren">― Warren Buffett</p>
-			<a class="mt-4 signup_button" href="/register">Sign Up</a>
+			<a class="signup_button" href="/register">Sign Up</a>
 		</div>
 		<div class="right col">
 			<img class="money_img" src="https://media1.giphy.com/media/SKdWvkE1poQpuTwwMA/source.gif">

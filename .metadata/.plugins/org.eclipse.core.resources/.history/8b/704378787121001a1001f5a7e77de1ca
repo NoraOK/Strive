@@ -1,0 +1,9 @@
+.login{
+	font-family: 'Nunito', sans-serif;
+	margin-top: 200px;
+} 
+
+.water_img{
+	opacity: .75;
+	width: 50%;
+}

@@ -1,0 +1,8 @@
+.body{
+	padding-top: 50px;
+}
+
+.water_img{
+	opactiy: .75;
+	width: 50%;
+}
