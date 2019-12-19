@@ -1,0 +1,5 @@
+package com.noraokeeffe.strive.respositories;
+
+public interface GoalExpenseRepo {
+
+}

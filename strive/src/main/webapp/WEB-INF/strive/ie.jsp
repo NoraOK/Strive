@@ -5,14 +5,16 @@
 
 <!DOCTYPE html>
 
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-	crossorigin="anonymous">
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Strive | Personal Finances</title>
+	<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+	<link href="/css/ie.css" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Nunito:200,400,700&display=swap" rel="stylesheet">
 </head>
 <body>
 	<div>
@@ -21,30 +23,30 @@
 	<div class="body">
 		<p>Update your finances regularly to ensure you are on top of your financial goals</p>
 		<p>Monthly Expenses:</p>
-		<c:forEach items="${user_expenses}" var="userExpense">
+		<c:forEach items="${user.user_expenses}" var="userExpense">
 			<p><c:out value="${userExpense.name}"/>  <c:out value="${userExpense.amount}"/> <a>Delete</a></p>
 		</c:forEach>
-		<p>Total: <c:out value="${user.TotalUserExpense}"/></p>
-		<form:form action="/addUserExpense" method="post" modelAttribute="user_expenses">
+		<p>Total: <c:out value="${user.totalUserExpense}"/></p>
+		<form:form action="/addUserExpense" method="post" modelAttribute="userExpense">
+			<form:hidden path="user" value="${user.id}"/>
 			<form:label path="name">Expense:</form:label>
 			<form:input path="name" type="text" class="form-control"/>
 			<form:label path="amount">Amount:</form:label>
 			<form:input path="amount" type="text" class="form-control"/>
 			<input type="submit" value="Add"/>
 		</form:form>
-		<form:form action="/strive/updateFinances" method="post"
-			modelAttribute="user">
+		<form action="/updateFinances" method="post">
 			<p>
-				<form:label path="currentBalance" class="lead col-form-label">Account Balance: </form:label>
-				<form:input path="currentBalance" type="text" class="form-control" />
+				<label class="lead col-form-label">Current Savings: </label>
+				<input name="currentBalance" type="text" class="form-control" />
 			</p>
 			<p>
-				<form:label path="currentIncome" class="lead col-form-label">Monthly Income: </form:label>
-				<form:input path="currentIncome" type="text" class="form-control" />
+				<label class="lead col-form-label">Monthly Income: </label>
+				<input name="currentIncome" type="text" class="form-control" />
 			</p>
 			<input class="btn btn-info" type="submit" value="Submit" />
 			<a class="btn btn-warning" href="/userHome">Cancel</a>
-		</form:form>
+		</form>
 	</div>
 </body>
 </html>

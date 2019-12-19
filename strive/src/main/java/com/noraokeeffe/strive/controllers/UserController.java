@@ -1,7 +1,5 @@
 package com.noraokeeffe.strive.controllers;
 
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -18,16 +16,19 @@ import com.noraokeeffe.strive.models.Goal;
 import com.noraokeeffe.strive.models.User;
 import com.noraokeeffe.strive.models.UserExpense;
 import com.noraokeeffe.strive.services.GoalService;
+import com.noraokeeffe.strive.services.UserExpenseService;
 import com.noraokeeffe.strive.services.UserService;
 
 @Controller
 public class UserController {
 	private final UserService userService;
 	private final GoalService goalService;
+	private final UserExpenseService userExpenseService;
 	
-	public UserController(UserService userService, GoalService goalService) {
+	public UserController(UserService userService, GoalService goalService, UserExpenseService userExpenseService) {
 		this.userService = userService;
 		this.goalService = goalService;
+		this.userExpenseService = userExpenseService;
 	}
 	
 	@RequestMapping("/")
@@ -98,17 +99,25 @@ public class UserController {
 	}
 		
 	@RequestMapping("/updateFinances")
-	public String iePage(HttpSession session, Model model, @ModelAttribute("user_expenses") List<UserExpense> user_expenses, @ModelAttribute(""))
-	
-	@RequestMapping("/newGoal")
-	public String newGoal(@ModelAttribute("goal") Goal goal) {
-		return "strive/newGoal.jsp";
-	}
-	
-	@RequestMapping("/updateFinances")
-	public String financesForm(@ModelAttribute("user") User user) {
+	public String iePage(HttpSession session, Model model, @ModelAttribute("userExpense") UserExpense user_expense ) {
+		Long userId = (Long) session.getAttribute("user_id");
+		model.addAttribute("user", userService.findUserById(userId));
 		return "strive/ie.jsp";
 	}
+	
+	@RequestMapping(value="/addUserExpense", method= RequestMethod.POST)
+	public String addUserExpense(@Valid @ModelAttribute("userExpense") UserExpense user_expense, BindingResult result, Model model, HttpSession session) {
+		if(result.hasErrors()) {
+			return userHomePage(session, model);
+		}else {
+			userExpenseService.createUserExpense(user_expense);
+			return "redirect:/updateFinances";
+		}
+	}
+	
+
+	
+
 	
 	
 	
