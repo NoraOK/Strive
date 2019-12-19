@@ -141,6 +141,19 @@ public class User {
 	public void setUser_expenses(List<UserExpense> user_expenses) {
 		this.user_expenses = user_expenses;
 	}
+	
+	public double getTotalUserExpense() {
+		double count = 0;
+		for(int i=0; i<user_expenses.size(); i++) {
+			count += user_expenses.get(i).getAmount();
+		}
+		return count;
+	}
+	
+	public double getIncomeLessExpense() {
+		double netIncome = currentIncome - getTotalUserExpense();
+		return netIncome;
+	}
 
 	@PrePersist
 	 protected void onCreate(){

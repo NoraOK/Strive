@@ -49,9 +49,10 @@ public class Goal {
 	 @JoinColumn(name="user_id")
 	 private User user;
 	 
-	 @OneToMany(mappedBy="goal", fetch=FetchType.LAZY)
+	 @OneToMany(mappedBy="goal", fetch=FetchType.EAGER)
 	 private List<GoalExpense> goal_expenses;
-
+	 
+	  
 	 public Goal() {}
 
 	public Long getId() {
@@ -103,6 +104,13 @@ public class Goal {
 		this.goalResult = goalResult;
 	}
 
+	public double getTotalGoalExpense() {
+		double count = 0;
+		for(int i=0; i<goal_expenses.size(); i++) {
+			count += goal_expenses.get(i).getAmount();
+		}
+		return count;
+	}
 	@PrePersist
 	protected void onCreate(){
 		this.createdAt = new Date();

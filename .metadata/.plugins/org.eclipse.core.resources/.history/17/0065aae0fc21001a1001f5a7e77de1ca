@@ -1,0 +1,42 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<!DOCTYPE html>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<jsp:include page="header.jsp"/>
+	</div>
+	<div class="body">
+		<p>Update your finances to </p>
+
+		<form:form action="/strive/updateFinances" method="post"
+			modelAttribute="user">
+			<p>
+				<form:label path="currentBalance" class="lead col-form-label">Account Balance: </form:label>
+				<form:input path="currentBalance" type="text" class="form-control" />
+			</p>
+			<p>
+				<form:label path="currentIncome" class="lead col-form-label">Monthly Income: </form:label>
+				<form:input path="currentIncome" type="text" class="form-control" />
+			</p>
+
+			<p>
+				<form:label path="currentExpenses" class="lead col-form-label">Expenses: </form:label>
+				<form:input path="currentExpenses" type="text" class="form-control" />
+			</p>
+			<input class="btn btn-info" type="submit" value="Submit" />
+			<a class="btn btn-warning" href="/userHome">Cancel</a>
+		</form:form>
+
+	</div>
+</body>
+</html>

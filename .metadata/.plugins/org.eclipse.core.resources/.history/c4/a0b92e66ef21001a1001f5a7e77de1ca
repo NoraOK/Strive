@@ -1,0 +1,37 @@
+.body{
+	padding-top: 150px;
+	font-family: 'Nunito', sans-serif;
+	text-align:center;
+}
+
+.button1{
+	border:2px solid #EF8F63 ;
+	border-radius: 8px;
+	background-color: #EF8F63;
+	padding: 12px 25px;
+	color: white;
+
+}
+
+.button1:hover{
+	border:2px solid #EF8F63 ;
+	border-radius: 8px;
+	background-color: #F9AD86;
+	padding: 12px 25px;
+	color: white;
+}
+
+.two{
+	margin-left: 10px;
+}
+
+.welcome{
+	font-weight: 200;
+	font-size: 50px;
+}
+
+.labels{
+	font-weight: 200;
+	font-size: 35px;
+}
+

@@ -1,5 +1,7 @@
 package com.noraokeeffe.strive.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -14,6 +16,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.noraokeeffe.strive.models.Goal;
 import com.noraokeeffe.strive.models.User;
+import com.noraokeeffe.strive.models.UserExpense;
 import com.noraokeeffe.strive.services.GoalService;
 import com.noraokeeffe.strive.services.UserService;
 
@@ -93,16 +96,16 @@ public class UserController {
 		 }
 		return "strive/userHome.jsp";
 	}
-	
-	
-
+		
+	@RequestMapping("/updateFinances")
+	public String iePage(HttpSession session, Model model, @ModelAttribute("user_expenses") List<UserExpense> user_expenses, @ModelAttribute(""))
 	
 	@RequestMapping("/newGoal")
 	public String newGoal(@ModelAttribute("goal") Goal goal) {
 		return "strive/newGoal.jsp";
 	}
 	
-	@RequestMapping("/ie")
+	@RequestMapping("/updateFinances")
 	public String financesForm(@ModelAttribute("user") User user) {
 		return "strive/ie.jsp";
 	}
