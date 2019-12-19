@@ -15,7 +15,7 @@
 			<a href="/" class="d-inline home_button">Strive <img class="header_img" src="/images/icon2.png" alt=""></a>
 			<div class="d-inline links pl-5">
 				<a class="d-inline link" href="">About</a>
-				<a class="d-inline link pl-3" href="">News Feed</a>
+				<a class="d-inline link pl-3" href="/feed">News Feed</a>
 			</div>
 		</div>
 	</header>

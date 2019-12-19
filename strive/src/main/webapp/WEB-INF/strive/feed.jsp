@@ -19,16 +19,18 @@
 		<jsp:include page="headerNoLogout.jsp" />
 	</div>
 	<div class="body">
-	<div id="feedBanner" align="center">
-	<div align="left" class="col-5 d-inline-block">
-	<h1>Let's Talk Money</h1>
-	<h3>In-depth financial articles from reliable sources.</h3>
-	<p>Educate yourself in the world of finance and financial business with up-to-date news specially curated by our Strive specialists.</p>
-	</div>
-	<div class="col-5 d-inline-block">
-	<!-- <img src="/images/backUpImg.jpg"> -->
-	</div>
-	</div>
+		<div id="feedBanner" align="center">
+			<div align="left" class="col-5 d-inline-block">
+				<h1>Let's Talk Money</h1>
+				<h3>In-depth financial articles from reliable sources.</h3>
+				<p>Educate yourself in the world of finance and financial
+					business with up-to-date news specially curated by our Strive
+					specialists.</p>
+			</div>
+			<div class="col-5 d-inline-block">
+				<!-- <img src="/images/backUpImg.jpg"> -->
+			</div>
+		</div>
 		<div align="center">
 			<c:forEach items="${articles}" var="article">
 				<div class="articles col-4">
@@ -39,14 +41,19 @@
 							alt="NO IMG" width="100%" height="300px">
 					</c:if>
 					<h4 align="left" class="">
-						<a
-							href="<c:out
+						<c:if test="${!article.getAsJsonObject().get('title').isJsonNull()}">
+							<a
+								href="<c:out
 				value="${article.getAsJsonObject().get('url').getAsString()}"></c:out>"><c:out
-								value="${article.getAsJsonObject().get('title').getAsString()}"></c:out></a>
+									value="${article.getAsJsonObject().get('title').getAsString()}"></c:out></a>
+						</c:if>
 					</h4>
 					<p class="details" align="left">
-						<c:out
-							value="${article.getAsJsonObject().get('description').getAsString()}"></c:out>
+						<c:if
+							test="${!article.getAsJsonObject().get('description').isJsonNull()}">
+							<c:out
+								value="${article.getAsJsonObject().get('description').getAsString()}"></c:out>
+						</c:if>
 					</p>
 				</div>
 			</c:forEach>

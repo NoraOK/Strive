@@ -97,13 +97,9 @@ public class UserController {
 		return "strive/userHome.jsp";
 	}
 		
-	@RequestMapping("/updateFinances")
-	public String iePage(HttpSession session, Model model, @ModelAttribute("user_expenses") List<UserExpense> user_expenses, @ModelAttribute(""))
-	
-	@RequestMapping("/newGoal")
-	public String newGoal(@ModelAttribute("goal") Goal goal) {
-		return "strive/newGoal.jsp";
-	}
+//	@RequestMapping("/updateFinances")
+//	public String iePage(HttpSession session, Model model, @ModelAttribute("user_expenses") List<UserExpense> user_expenses, @ModelAttribute(""))
+//	
 	
 	@RequestMapping("/updateFinances")
 	public String financesForm(@ModelAttribute("user") User user) {
