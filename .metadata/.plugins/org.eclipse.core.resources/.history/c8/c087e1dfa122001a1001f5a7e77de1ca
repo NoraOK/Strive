@@ -98,14 +98,18 @@ public class UserController {
 		return "strive/userHome.jsp";
 	}
 		
-
+<<<<<<< HEAD
 	@RequestMapping("/updateFinances")
 	public String iePage(HttpSession session, Model model, @ModelAttribute("userExpense") UserExpense user_expense ) {
 		Long userId = (Long) session.getAttribute("user_id");
 		model.addAttribute("user", userService.findUserById(userId));
 		return "strive/ie.jsp";
 	}
-
+=======
+//	@RequestMapping("/updateFinances")
+//	public String iePage(HttpSession session, Model model, @ModelAttribute("user_expenses") List<UserExpense> user_expenses, @ModelAttribute(""))
+//	
+>>>>>>> dce4ac8096e9bc1c2a9849feaf2de9ed2a232eb8
 	
 	@RequestMapping(value="/addUserExpense", method= RequestMethod.POST)
 	public String addUserExpense(@Valid @ModelAttribute("userExpense") UserExpense user_expense, BindingResult result, Model model, HttpSession session) {

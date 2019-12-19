@@ -31,6 +31,8 @@ public class GoalController {
 		return "strive/newGoal.jsp";
 	}
 
+	
+	
 	@PostMapping(value="/strive/newGoal")
 	public String postCreateGoal(@Valid @ModelAttribute("goal") Goal goal, BindingResult resul, Model model, HttpSession session) {
 		goalService.createGoal(goal);

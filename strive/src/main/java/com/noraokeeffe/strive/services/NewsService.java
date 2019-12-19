@@ -18,7 +18,7 @@ public class NewsService {
 
 	public JsonArray getNews() throws IOException {
 	  Request request = new Request.Builder()
-	      .url("https://newsapi.org/v2/everything?q=bitcoin&from=2019-11-18&sortBy=publishedAt&apiKey=1179566a351a4455be87f40df6065cca")
+	      .url("https://newsapi.org/v2/everything?q=bitcoin&from=2019-11-19&sortBy=publishedAt&apiKey=1179566a351a4455be87f40df6065cca")
 	      .build();
 
 	  try (Response response = client.newCall(request).execute()) {
