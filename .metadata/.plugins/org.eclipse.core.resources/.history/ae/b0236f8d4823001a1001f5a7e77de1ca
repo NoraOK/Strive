@@ -22,8 +22,7 @@
 	border-radius: 10px;
 	box-shadow: 1px 1px 6px;
 	padding: 50px;
-	text-align: center;
-	
+	padding-left: 50px;
 }
 
 

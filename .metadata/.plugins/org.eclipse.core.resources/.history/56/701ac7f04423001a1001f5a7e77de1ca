@@ -23,13 +23,12 @@
 	box-shadow: 1px 1px 6px;
 	padding: 50px;
 	padding-left: 50px;
-	
 }
 
 .spotlight th{
 	color: #F9AD86;
 	font-size: 25px;
-	color: #EF8F63;
+	color: #F9AD86;
 	font-weight: 200;
 
 }
@@ -39,18 +38,14 @@
 	font-weight: 200;
 }
 .button2{
-	background-color: #F9AD86;
 	border: solid 1.5px #F9AD86;
 	border-radius: 8px;
 	padding:  8px;
-	color: white;
 }
 
 .button2:hover {
-	background-color: #EF8F63;
+	background-color: #F9AD86;
 	color: white;
-	border: solid 1.5px #EF8F63;
-	
 }
 
 

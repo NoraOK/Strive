@@ -22,8 +22,7 @@
 	border-radius: 10px;
 	box-shadow: 1px 1px 6px;
 	padding: 50px;
-	text-align: center;
-	
+	padding-left: 50px;
 }
 
 
@@ -59,7 +58,7 @@
 
 .labels{
 	font-weight: 200;
-	font-size: 25px;
+	font-size: 35px;
 }
 
 .inc{
@@ -70,6 +69,6 @@
 }
 
 .fig{
-	font-size: 35px;
+	font-size: 45px;
 }
 

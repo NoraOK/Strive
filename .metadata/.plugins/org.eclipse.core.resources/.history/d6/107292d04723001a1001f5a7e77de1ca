@@ -20,7 +20,7 @@
 	</div>
 	<div class="body">
 		<img src="/images/sunset.jpg">
-		<div class="container col-8 spotlight">
+		<div class="container col-5 spotlight row">
 			<p class="welcome"> Welcome <c:out value="${user.firstName}"/></p>
 			<c:choose>
 				<c:when test="${user.currentBalance == null || user.currentIncome == null }">
@@ -51,8 +51,8 @@
 					</c:choose>
 				</c:otherwise>
 			</c:choose>
-			<a href="/updateFinances" class="button1 one col btn-lg">Update Personal Finances</a>
-			<a href="/newGoal" class="button1 two col btn-lg">Set New Goals</a>
+			<p class="one col"><a href="/updateFinances" class="button1">Update Personal Finances</a></p>
+			<p class="two col"><a href="/newGoal" class="button1">Set New Goals</a></p>
 		</div>
 
 	</div>
