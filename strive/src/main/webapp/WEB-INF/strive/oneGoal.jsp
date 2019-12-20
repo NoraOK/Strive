@@ -23,7 +23,7 @@
 		<jsp:include page="header.jsp" />
 	</div>
 	<div class="body col-12" align="center">
-	<img src="/" >
+	<img src="/images/city.png" >
 		<div class="leftRight col-5 d-inline-block" align="left">
 			<%-- <c:out value="${goal.user.firstName}" /> --%>
 			<h1 class="main">
