@@ -33,7 +33,7 @@
 					test="${user.currentBalance == null || user.currentIncome == null }">
 					<div class="col-5 d-inline-block">
 						<p class="labels">Current Savings</p>
-						<p class="fig msg">Add savings</p>
+						<p class="fig">Click below to add your current savings.</p>
 					</div>
 					<div class="col-5 d-inline-block">
 						<p class="labels">Current Income (Monthly)</p>

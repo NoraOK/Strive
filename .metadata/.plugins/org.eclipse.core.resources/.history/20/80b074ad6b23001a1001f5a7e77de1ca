@@ -53,7 +53,7 @@ public class UserController {
 	         
 	     }else if(userService.checkUser(user.getEmail())) {
 	         attribute.addFlashAttribute("error", "User already exists");
-	         return "redirect:/register";
+	         return "redirect:/registration";
 	     }else {
 	         User new_user = userService.registerUser(user);
 	         session.setAttribute("loggedIn", user);
