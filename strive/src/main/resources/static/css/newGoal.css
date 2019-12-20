@@ -1,3 +1,42 @@
-.body{
-	padding-top: 150px;
+.body {
+	padding-top: 200px;
+    position: relative;
+    overflow: hidden;
+    height: 800px;
+    font-family:'Nunito', sans-serif;
+    
+    
+}
+
+.body img {
+	background-color: rgba(232,114,17,1.0);
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: 800px;
+    opacity: 0.4;
+}
+
+.spotlight{
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 1px 1px 6px;
+	padding: 50px;
+	padding-left: 50px;
+	
+}
+.button2{
+	background-color: #F9AD86;
+	border: solid 1.5px #F9AD86;
+	border-radius: 8px;
+	padding:  8px;
+	color: white;
+}
+
+.button2:hover {
+	background-color: #EF8F63;
+	color: white;
+	border: solid 1.5px #EF8F63;
+	
 }

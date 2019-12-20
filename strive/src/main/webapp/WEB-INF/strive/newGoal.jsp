@@ -18,8 +18,10 @@
 	<div>
 		<jsp:include page="header.jsp"/>
 	</div>
-	<div align="center">
-	<div class="body col-5" align="left">
+	<div class="body" align="center">
+	
+	<img src="/images/green_mountain.png">
+	<div class="col-5 spotlight" align="left">
 		<h3>Set a new goal</h3>
 		<form:form action="/strive/newGoal" method="post"
 			modelAttribute="goal">
@@ -35,8 +37,10 @@
 				<form:errors path="deadline"/>
 				<form:input path="deadline" type="date" class="form-control" />
 			</p>
-			<input class="btn btn-info" type="submit" value="Submit" />
-			<a class="btn btn-warning" href="/userHome">Cancel</a>
+			<p align="right">
+			<input type="submit" value="Submit" class="button2"/>
+			<a class="button2" href="/userHome">Cancel</a>
+			</p>
 		</form:form>
 	</div>
 	</div>

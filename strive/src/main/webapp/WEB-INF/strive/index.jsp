@@ -18,7 +18,7 @@
 </head>
 <body>
 	<div>
-		<jsp:include page="header.jsp" />
+		<jsp:include page="indexHeader.jsp" />
 	</div>
 	<div class="middle row">
 		<div class="left col">
