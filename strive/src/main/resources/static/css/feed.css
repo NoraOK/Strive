@@ -1,5 +1,6 @@
 .body{
 	padding-top: 80px;
+	 font-family:'Nunito', sans-serif;
 }
 .articles{
 	display: inline-block;
@@ -23,7 +24,7 @@
 	height: 500px;
 	background-color: black;
 	margin-bottom: 100px;
-	padding: 200px 100px 200px 100px;
+	padding: 12px 100px 200px 100px;
 	color: white;
 }
 #feedBanner h1{
@@ -31,4 +32,13 @@
 }
 #feedBanner img{
 	padding:0px;
+}
+#piggy {
+	height: 500px;
+	margin-left: 200px;
+	vertical-align: top;
+}
+.text{
+	padding-top: 150px;
+	vertical-align: top;
 }

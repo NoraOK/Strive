@@ -20,7 +20,7 @@
 	</div>
 	<div class="body">
 		<div id="feedBanner" align="center">
-			<div align="left" class="col-5 d-inline-block">
+			<div align="left" class="col-5 d-inline-block text">
 				<h1>Let's Talk Money</h1>
 				<h3>In-depth financial articles from reliable sources.</h3>
 				<p>Educate yourself in the world of finance and financial
@@ -28,7 +28,7 @@
 					specialists.</p>
 			</div>
 			<div class="col-5 d-inline-block">
-				<!-- <img src="/images/backUpImg.jpg"> -->
+				<img id="piggy" src="/images/piggyBank.png">
 			</div>
 		</div>
 		<div align="center">

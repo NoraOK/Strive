@@ -22,83 +22,90 @@
 	<div>
 		<jsp:include page="header.jsp" />
 	</div>
-	<div class="body col-5 d-inline-block" align="left">
-		<c:out value="${goal.user.firstName}" />
-		<h1 class="main">
-			<c:out value="${goal.goalName}" />
-		</h1>
-		<p>
-			Created at:
-			<fmt:formatDate pattern="MMMM dd, yyyy" value="${goal.createdAt}" />
-		</p>
-		<p class="labels">
-			Deadline:
-			<fmt:formatDate pattern="MMMM dd, yyyy" value="${goal.deadline}" />
-		</p>
-		<p class="labels">
-			<c:choose>
+	<div class="body col-12" align="center">
+	<img src="/" >
+		<div class="leftRight col-5 d-inline-block" align="left">
+			<%-- <c:out value="${goal.user.firstName}" /> --%>
+			<h1 class="main">
+				<c:out value="${goal.goalName}" />
+			</h1>
+			<p>
+				Created on:
+				<fmt:formatDate pattern="MMMM dd, yyyy" value="${goal.createdAt}" />
+			</p>
+			<h4 class="labels">
+				Deadline:
+				<fmt:formatDate pattern="MMMM dd, yyyy" value="${goal.deadline}" />
+			</h4>
+			<p class="labels">
+				<c:choose>
 
-				<c:when test="${goal.goal_expenses.size() == 0}">
-					<p>Add an expense to your goal so Strive can create a plan to
-						help you reach it!</p>
-				</c:when>
-				<c:when
-					test="${((user.incomeLessExpense) + (user.currentBalance)) < (goal.totalGoalExpense /(goal.duration/4))}">
-					<p>
-						According to your <a href="/updateFinances">Personal Finances</a>
-						you will not be able to achieve your goal. But we don't want you
-						to give up! Try setting your goal deadline farther out.
-					</p>
-				</c:when>
-				<c:otherwise>
-					<p>
-						Goal Result:
-						<c:out value="${goal.goalResult}" />
-					</p>
-				</c:otherwise>
-			</c:choose>
-		</p>
-		<p>
-			<form:form action="/addGoalExpense" method="post"
-				modelAttribute="goalExpense">
-				<form:hidden path="goal" value="${goal.id}" />
-				<form:label path="name">Expense:</form:label>
-				<form:input path="name" type="text" class="form-control" />
-				<form:label path="amount">Amount:</form:label>
-				<form:input path="amount" type="text" class="form-control" />
-				<input class="btn btn-info" type="submit" value="Add" />
-			</form:form>
-		</p>
-	</div>
-	<div class="body col-5 d-inline-block">
+					<c:when test="${goal.goal_expenses.size() == 0}">
+						<p>Add an expense to your goal so Strive can create a plan to
+							help you reach it!</p>
+					</c:when>
+					<c:when
+						test="${((user.incomeLessExpense) + (user.currentBalance)) < (goal.totalGoalExpense /(goal.duration/4))}">
+						<p>
+							According to your <a href="/updateFinances">Personal Finances</a>
+							you will not be able to achieve your goal. But we don't want you
+							to give up! Try setting your goal deadline farther out.
+						</p>
+					</c:when>
+					<c:otherwise>
+						<p>
+							Goal Result:
+							<c:out value="${goal.goalResult}" />
+						</p>
+					</c:otherwise>
+				</c:choose>
+			</p>
+			<p>
+				<form:form action="/addGoalExpense" method="post"
+					modelAttribute="goalExpense">
+					<form:hidden path="goal" value="${goal.id}" />
+					<form:label path="name">Expense: <form:input
+							path="name" type="text" class="form-control" />
+					</form:label>
 
-		<h3>Goal Expenses:</h3>
-		<table>
-			<thead>
-				<tr>
-					<th>Expense</th>
-					<th>Cost</th>
-					<th>Action</th>
-				</tr>
-			</thead>
-			<tbody>
+					<form:label path="amount">Amount:  <form:input
+							path="amount" type="text" class="form-control" />
+					</form:label>
+					<input class="button2" type="submit" value="Add" />
+				</form:form>
+			</p>
+		</div>
+		<div class="leftRight col-6 d-inline-block" align="left">
 
-				<c:forEach items="${goal.goal_expenses}" var="goalExpense">
+			<h3>Goal Expenses:</h3>
+			<table class="table">
+				<thead>
 					<tr>
-						<td><c:out value="${goalExpense.name}" /></td>
-						<td><c:out value="${goalExpense.amount}" /></td>
-						<td>
-							<form action="/deleteGoalExpense/${goalExpense.id}" method="post">
-								<input type="hidden" name="_method" value="delete"> <input
-									type="submit" value="Delete">
-							</form>
-						</td>
+						<th>Expense</th>
+						<th>Cost</th>
+						<th>Action</th>
 					</tr>
-				</c:forEach>
-			</tbody>
+				</thead>
+				<tbody>
+
+					<c:forEach items="${goal.goal_expenses}" var="goalExpense">
+						<tr>
+							<td><c:out value="${goalExpense.name}" /></td>
+							<td><c:out value="${goalExpense.amount}" /></td>
+							<td>
+								<form action="/deleteGoalExpense/${goalExpense.id}"
+									method="post">
+									<input type="hidden" name="_method" value="delete"> <input
+										type="submit" value="Delete" class="button2">
+								</form>
+							</td>
+						</tr>
+					</c:forEach>
+				</tbody>
 
 
-		</table>
+			</table>
+		</div>
 	</div>
 </body>
 </html>
