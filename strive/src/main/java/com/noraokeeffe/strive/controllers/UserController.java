@@ -132,6 +132,14 @@ public class UserController {
 		userExpenseService.deleteUserExpense(u_e);
 		return "redirect:/updateFinances";
 	}
+	
+	 @RequestMapping("/logout")
+	 public String logout(HttpSession session) {
+	     // invalidate session
+	     // redirect to login page
+		 session.invalidate();
+		 return "redirect:/";
+	 }
 
 	
 }

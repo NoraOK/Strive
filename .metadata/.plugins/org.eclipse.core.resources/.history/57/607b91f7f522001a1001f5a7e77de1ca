@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Strive | Your Goals</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="/css/allGoals.css" rel="stylesheet" type="text/css"/>
+	<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div>
+		<jsp:include page="header.jsp" />
+	</div>
+	<div class="body">
+	<h3>Strive for success by stick to your goals</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Expense</th>
+					<th>Cost</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${user.goals}" var="goal">
+					<tr>
+						<td><c:out value="${goal.goalName}" /></td>
+						<td><c:out value="${goal.deadline}" /></td>
+						<td>
+	<%-- 					<form action="/deleteGoalExpense/${goalExpense.id}" method="post">
+							<input type="hidden" name="_method" value="delete"> 
+							<input type="submit" value="Delete">
+						</form> --%>
+						</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

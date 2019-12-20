@@ -1,0 +1,10 @@
+.body{
+    position: relative;
+    background: #5C97FF;
+    overflow: hidden;
+}
+
+.spotlight{
+	background-color: white;
+	opacity: 1.0;
+}

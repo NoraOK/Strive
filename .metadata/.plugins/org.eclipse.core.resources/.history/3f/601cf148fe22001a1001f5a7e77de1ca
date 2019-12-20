@@ -1,0 +1,20 @@
+.body {
+	padding-top: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.body img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: auto;
+    opacity: 0.6;
+}
+
+.spotlight{
+	background-color: white;
+}
+
+

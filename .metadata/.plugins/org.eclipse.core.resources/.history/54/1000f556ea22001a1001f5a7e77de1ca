@@ -1,0 +1,58 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Strive | Home</title>
+	<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+	<link href="/css/userHome.css" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Nunito:200,400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div>
+		<jsp:include page="header.jsp"/>
+	</div>
+	<div class="body container col-7">
+		<div class="info">
+			<p class="welcome"> Welcome <c:out value="${user.firstName}"/></p>
+			<c:choose>
+				<c:when test="${user.currentBalance == null || user.currentIncome == null }">
+					<p class="labels">Current Savings</p> 
+					<p class="fig">Click below to add your current savings.</p>
+					<p class="labels">Current Income (Monthly)</p> 
+					<p class="fig inc">Click below to update your current income.</p>
+					<p class="labels">Current Expenses (Monthly)</p> 
+					<p class="fig exp">Click below to update your current expenses.</p>
+					<p class="labels">Net Income (Monthly)</p> 	
+					<p class="fig netinc pos">$0</p>
+				</c:when>
+				<c:otherwise>
+					<p class="labels">Current Savings</p> 
+					<p class="fig">$ <c:out value="${user.currentBalance}"/> </p>
+					<p class="labels">Current Income (Monthly)</p> 
+					<p class="fig inc">$ <c:out value="${user.currentIncome}"/> </p>
+					<p class="labels">Current Expenses (Monthly)</p> 
+					<p class="fig exp">$ <c:out value="${user.totalUserExpense}"/></p>
+					<p class="labels">Net Income (Monthly)</p> 	
+					<c:choose>
+						<c:when test="${user.incomeLessExpense > 0}">		
+							<p class="fig netinc pos">$<c:out value="${user.incomeLessExpense}"/></p>
+						</c:when>
+						<c:otherwise>
+							<p class="fig netinc neg">$<c:out value="${user.incomeLessExpense}"/></p>
+						</c:otherwise>
+					</c:choose>
+				</c:otherwise>
+			</c:choose>
+		</div>
+		<p class="one"><a href="/updateFinances" class="button1">Update personal finances</a></p>
+		<p class="two"><a href="/goals" class="button1">Goals</a></p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+.body {
+	padding-top: 200px;
+    position: relative;
+    overflow: hidden;
+    height: 2200px;
+    font-family:'Nunito', sans-serif;
+    
+}
+
+.body img {
+	background-color: rgba(232,114,17,1.0);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: auto;
+    opacity: 0.4;
+}
+
+.spotlight{
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 1px 1px 6px;
+	padding: 50px;
+	padding-left: 50px;
+}
+
+.spotlight th{
+	color: #F9AD86;
+	font-size: 25px;
+	color: #F9AD86;
+	font-weight: 200;
+
+}
+
+.spotlight .h1{
+	font-size: 30px;
+	font-weight: 200;
+}
+
+
+

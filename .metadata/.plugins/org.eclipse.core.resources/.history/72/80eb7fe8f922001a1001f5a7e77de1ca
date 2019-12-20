@@ -1,0 +1,5 @@
+.body{
+	padding-top:200px;
+	background-image: url("images/coral_abstract.jpg");
+	opacity: .5;
+}

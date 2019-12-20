@@ -1,0 +1,23 @@
+.body {
+	padding-top: 200px;
+    position: relative;
+    overflow: hidden;
+    height: 2200px;
+}
+
+.body img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: auto;
+    opacity: 0.6;
+}
+
+.spotlight{
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px;
+}
+
+

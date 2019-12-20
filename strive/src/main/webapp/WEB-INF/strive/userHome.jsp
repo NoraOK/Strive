@@ -52,7 +52,7 @@
 			</c:choose>
 		</div>
 		<p class="one"><a href="/updateFinances" class="button1">Update personal finances</a></p>
-		<p class="two"><a href="/goals" class="button1">Goals</a></p>
+		<p class="two"><a href="/newGoal" class="button1">Goals</a></p>
 	</div>
 </body>
 </html>

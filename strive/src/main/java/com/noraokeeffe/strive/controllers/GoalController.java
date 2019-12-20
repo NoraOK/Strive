@@ -35,7 +35,10 @@ public class GoalController {
 	}
 
 	@RequestMapping("/newGoal")
-	public String newGoal(@ModelAttribute("goal") Goal goal) {
+	public String newGoal(@ModelAttribute("goal") Goal goal, Model model, HttpSession session) {
+		Long userId = (Long) session.getAttribute("user_id");
+		User user = userService.findUserById(userId);
+		model.addAttribute("user", user);
 		return "strive/newGoal.jsp";
 	}
 
@@ -46,7 +49,7 @@ public class GoalController {
 			Long userId = (Long) session.getAttribute("user_id");
 			User user = userService.findUserById(userId);
 			model.addAttribute("User", user);
-			return newGoal(goal);
+			return newGoal(goal,model, session);
 		} else {
 			goalService.createGoal(goal);
 			return "redirect:/oneGoal/" + goal.getId();
@@ -55,12 +58,12 @@ public class GoalController {
 
 	@RequestMapping("/oneGoal/{goal_id}")
 	public String readOneGoal(HttpSession session, Model model, @PathVariable("goal_id") Long goal_id,
-			@ModelAttribute("goalExpense") GoalExpense goalExpense) {
+		@ModelAttribute("goalExpense") GoalExpense goalExpense) {
 		Goal goal = goalService.findGoalById(goal_id);
 		model.addAttribute("goal", goal);
 		Long userId = (Long) session.getAttribute("user_id");
-//			User user = goalService.findUserById(userId);
-//			model.addAttribute("user", user);
+		User user = userService.findUserById(userId);
+		model.addAttribute("user", user);
 		return "/strive/oneGoal.jsp";
 	}
 
@@ -89,7 +92,7 @@ public class GoalController {
 	public String allGoals(HttpSession session, Model model) {
 		Long userId = (Long) session.getAttribute("user_id");
 		User user = userService.findUserById(userId);
-		model.addAttribute("User", user);
+		model.addAttribute("user", user);
 		return "strive/allGoals.jsp";
 	}
 
