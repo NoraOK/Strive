@@ -11,8 +11,8 @@
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
 <link href="/css/oneGoal.css" rel="stylesheet" type="text/css" />
-<link href="https://fonts.googleapis.com/css?family=Nunito:200,400,700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
+	rel="stylesheet">
 <html>
 <head>
 <meta charset="UTF-8">
@@ -26,17 +26,17 @@
 	<img src="/images/city.png" >
 		<div class="leftRight col-5 d-inline-block p-5" align="left">
 			<%-- <c:out value="${goal.user.firstName}" /> --%>
-			<p class="main">
+			<h1 class="main">
 				<c:out value="${goal.goalName}" />
-			</p>
+			</h1>
 			<p>
-				<span class="labels">Created on:</span>
+				Created on:
 				<fmt:formatDate pattern="MMMM dd, yyyy" value="${goal.createdAt}" />
 			</p>
-			<p>
-				<span class="labels">Deadline:</span>
+			<h4 class="labels">
+				Deadline:
 				<fmt:formatDate pattern="MMMM dd, yyyy" value="${goal.deadline}" />
-			</p>
+			</h4>
 			<p class="labels">
 				<c:choose>
 
@@ -54,16 +54,25 @@
 					</c:when>
 					<c:otherwise>
 						<p>
-							<span class="labels">Goal Plan:</span></p>
+							Goal Result:
 							<c:out value="${goal.goalResult}" />
-						
+						</p>
 					</c:otherwise>
 				</c:choose>
 			</p>
+			<p>
+				<form:form action="/addGoalExpense" method="post"
+					modelAttribute="goalExpense" class="row">
+					<form:hidden path="goal" value="${goal.id}" />
+					<form:input path="name" type="text" class="form-control col m-1" placeholder="Expense"/>
+					<form:input path="amount" type="text" class="form-control col m-1" placeholder="Amount" />
+					<input class="button2" type="submit" value="Add" />
+				</form:form>
+			</p>
 		</div>
-		<div class="leftRight col-5 d-inline-block p-5" align="left">
+		<div class="leftRight col-6 d-inline-block" align="left">
 
-			<p class="labels">Goal Expenses:</p>
+			<h3>Goal Expenses:</h3>
 			<table class="table">
 				<thead>
 					<tr>
@@ -81,8 +90,8 @@
 							<td>
 								<form action="/deleteGoalExpense/${goalExpense.id}"
 									method="post">
-									<input type="hidden" name="_method" value="delete"> 
-									<input type="submit" value="Delete" class="button2 btn-sm">
+									<input type="hidden" name="_method" value="delete"> <input
+										type="submit" value="Delete" class="button2">
 								</form>
 							</td>
 						</tr>
@@ -91,15 +100,6 @@
 
 
 			</table>
-			<p>
-				<form:form action="/addGoalExpense" method="post"
-					modelAttribute="goalExpense" class="row">
-					<form:hidden path="goal" value="${goal.id}" />
-					<form:input path="name" type="text" class="form-control col m-1" placeholder="Expense"/>
-					<form:input path="amount" type="text" class="form-control col m-1" placeholder="Amount" />
-					<input class="button2 btn-sm" type="submit" value="Add" />
-				</form:form>
-			</p>
 		</div>
 	</div>
 </body>

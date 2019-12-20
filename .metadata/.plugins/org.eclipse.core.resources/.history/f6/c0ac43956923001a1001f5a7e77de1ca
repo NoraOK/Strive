@@ -54,11 +54,20 @@
 					</c:when>
 					<c:otherwise>
 						<p>
-							<span class="labels">Goal Plan:</span></p>
+							<span class="labels">Goal Result:</span>
 							<c:out value="${goal.goalResult}" />
-						
+						</p>
 					</c:otherwise>
 				</c:choose>
+			</p>
+			<p>
+				<form:form action="/addGoalExpense" method="post"
+					modelAttribute="goalExpense" class="row">
+					<form:hidden path="goal" value="${goal.id}" />
+					<form:input path="name" type="text" class="form-control col m-1" placeholder="Expense"/>
+					<form:input path="amount" type="text" class="form-control col m-1" placeholder="Amount" />
+					<input class="button2 btn-sm" type="submit" value="Add" />
+				</form:form>
 			</p>
 		</div>
 		<div class="leftRight col-5 d-inline-block p-5" align="left">
@@ -91,15 +100,6 @@
 
 
 			</table>
-			<p>
-				<form:form action="/addGoalExpense" method="post"
-					modelAttribute="goalExpense" class="row">
-					<form:hidden path="goal" value="${goal.id}" />
-					<form:input path="name" type="text" class="form-control col m-1" placeholder="Expense"/>
-					<form:input path="amount" type="text" class="form-control col m-1" placeholder="Amount" />
-					<input class="button2 btn-sm" type="submit" value="Add" />
-				</form:form>
-			</p>
 		</div>
 	</div>
 </body>

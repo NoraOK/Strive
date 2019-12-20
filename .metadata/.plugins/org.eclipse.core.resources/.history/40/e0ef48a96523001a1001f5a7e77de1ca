@@ -8,7 +8,7 @@
 	background-color: #F9AD86;
 	border: solid 1.5px #F9AD86;
 	border-radius: 8px;
-	padding:  3px;
+	padding:  8px;
 	color: white;
 }
 
@@ -26,26 +26,14 @@
 	padding: 50px;
 }
 .body img {
-	background-color: rgba(232,114,17,.8);
+	background-color: rgba(232,114,17,1.0);
     position: absolute;
     left: 0px;
     top: 00px;
     width: 100%;
     height: 900px;
- 	opacity: 0.4;
-}
-
-.main{
-	font-size: 45px;
-	font-weight: 200;
-}
-
-th{
-	color: #F9AD86;
-	font-size: 20px;
-	color: #EF8F63;
-	font-weight: 200;	
+ opacity: 0.4;
 }
 .labels{
-	font-size: 25px;
+	color: #EF8F63;
 }
