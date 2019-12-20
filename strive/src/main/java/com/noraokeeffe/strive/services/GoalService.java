@@ -14,6 +14,10 @@ public class GoalService {
 	}
 	
 	public Goal createGoal(Goal goal) {
+		goal.setGoalResult("0");
 		return goalRepo.save(goal);
+	}
+	public Goal findGoalById(Long goal_id) {
+		return goalRepo.findGoalById(goal_id);
 	}
 }
