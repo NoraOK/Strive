@@ -85,7 +85,13 @@ public class GoalController {
 		return "redirect:/oneGoal/" + g_e.getGoal().getId();
 	}
 	
-	
+	@RequestMapping("/allGoals")
+	public String allGoals(HttpSession session, Model model) {
+		Long userId = (Long) session.getAttribute("user_id");
+		User user = userService.findUserById(userId);
+		model.addAttribute("User", user);
+		return "strive/allGoals.jsp";
+	}
 
 }	
 
