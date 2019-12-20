@@ -27,7 +27,11 @@
 		<p class="main">
 			<c:out value="${goal.goalName}" />
 		</p>
+		<p>Created at:
+			<fmt:formatDate pattern="MMMM dd, yyyy" value="${goal.createdAt}" />
+		</p>
 		<p class="labels">
+			Deadline:
 			<fmt:formatDate pattern="MMMM dd, yyyy" value="${goal.deadline}" />
 		</p>
 		<p class="labels">
@@ -42,12 +46,12 @@
 				<form:input path="name" type="text" class="form-control" />
 				<form:label path="amount">Amount:</form:label>
 				<form:input path="amount" type="text" class="form-control" />
-				<input type="submit" value="Add" />
+				<input class="btn btn-info" type="submit" value="Add" />
 			</form:form>
 		</p>
 	</div>
 	<div class="body col-5 d-inline-block">
-		<p>Monthly Expenses:</p>
+		<p>Goal Expenses:</p>
 		<c:forEach items="${goal.goal_expenses}" var="goalExpense">
 			<p>
 				<c:out value="${goalExpense.name}" />
