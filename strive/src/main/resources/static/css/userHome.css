@@ -2,7 +2,7 @@
 	padding-top: 200px;
     position: relative;
     overflow: hidden;
-    height: 1200px;
+    height: 800px;
     font-family:'Nunito', sans-serif;
     
 }
@@ -13,7 +13,7 @@
     left: 0;
     top: 0;
     width: 100%;
-    min-height: 1200px;
+    min-height: 800px;
     opacity: 0.4;
 }
 
