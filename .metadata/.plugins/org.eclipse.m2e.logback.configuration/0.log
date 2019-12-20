@@ -3538,3 +3538,8 @@
 2019-12-19 17:44:18,414 [Worker-869: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2019-12-19 17:44:18,417 [Worker-869: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-12-19 17:44:18,419 [Worker-869: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/noraokeeffe/Desktop/dojo_assignments/Projects/Strive Project/strive/src/test/resources
+2019-12-19 17:46:21,890 [Worker-878: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-19 17:46:21,893 [Worker-878: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-12-19 17:46:21,893 [Worker-878: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-12-19 17:46:21,895 [Worker-878: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-19 17:46:21,895 [Worker-878: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/noraokeeffe/Desktop/dojo_assignments/Projects/Strive Project/strive/src/test/resources

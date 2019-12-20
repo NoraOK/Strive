@@ -69,10 +69,10 @@
 						<td><c:out value="${goalExpense.name}" /></td>
 						<td><c:out value="${goalExpense.amount}" /></td>
 						<td>
-						<form action="/deleteGoalExpense/${goalExpense.id}" method="post">
-							<input type="hidden" name="_method" value="delete"> 
-							<input type="submit" value="Delete">
-						</form>
+							<%-- 			<form action="/deleteGoalExpense" method="post">
+				<input type="hidden" name="_method" value="delete"> <input
+					type="submit" value="Delete">
+			</form> --%>
 						</td>
 					</tr>
 				</c:forEach>
