@@ -23,7 +23,7 @@
 		<jsp:include page="header.jsp" />
 	</div>
 	<div class="body col-5 d-inline-block" align="left">
-		<c:out value="${goal.user.firstName}"/>
+		<c:out value="${goal.user.firstName}" />
 		<h1 class="main">
 			<c:out value="${goal.goalName}" />
 		</h1>
@@ -36,17 +36,25 @@
 			<fmt:formatDate pattern="MMMM dd, yyyy" value="${goal.deadline}" />
 		</p>
 		<p class="labels">
-			 <c:out value="${goal.duration}"/>
 			<c:choose>
-			
+
 				<c:when test="${goal.goal_expenses.size() == 0}">
-					<p> Add an expense to your goal so Strive can create a plan to help you reach it!</p>
+					<p>Add an expense to your goal so Strive can create a plan to
+						help you reach it!</p>
 				</c:when>
-				<c:when test="${((user.incomeLessExpense) + (user.currentBalance)) < (goal.totalGoalExpense /(goal.duration/4))}">
-					<p>According to your <a href="/updateFinances">Personal Finances</a> you will not be able to achieve your goal. But we don't want you to give up! Try setting your goal deadline farther out.</p>
+				<c:when
+					test="${((user.incomeLessExpense) + (user.currentBalance)) < (goal.totalGoalExpense /(goal.duration/4))}">
+					<p>
+						According to your <a href="/updateFinances">Personal Finances</a>
+						you will not be able to achieve your goal. But we don't want you
+						to give up! Try setting your goal deadline farther out.
+					</p>
 				</c:when>
 				<c:otherwise>
-					<p>Goal Result:<c:out value="${goal.goalResult}" /></p>
+					<p>
+						Goal Result:
+						<c:out value="${goal.goalResult}" />
+					</p>
 				</c:otherwise>
 			</c:choose>
 		</p>
@@ -80,10 +88,10 @@
 						<td><c:out value="${goalExpense.name}" /></td>
 						<td><c:out value="${goalExpense.amount}" /></td>
 						<td>
-						<form action="/deleteGoalExpense/${goalExpense.id}" method="post">
-							<input type="hidden" name="_method" value="delete"> 
-							<input type="submit" value="Delete">
-						</form>
+							<form action="/deleteGoalExpense/${goalExpense.id}" method="post">
+								<input type="hidden" name="_method" value="delete"> <input
+									type="submit" value="Delete">
+							</form>
 						</td>
 					</tr>
 				</c:forEach>

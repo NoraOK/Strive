@@ -1,28 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title> Strive </title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link href="/css/index.css" rel="stylesheet" type="text/css"/>
-	<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+<title>Strive</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<link href="/css/index.css" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
+	rel="stylesheet">
 </head>
 <body>
 	<div>
-		<jsp:include page="indexHeader.jsp"/>
+		<jsp:include page="header.jsp" />
 	</div>
 	<div class="middle row">
 		<div class="left col">
 			<p class="slogan">Don't let your financial goals fly away</p>
-			<p class="quote">“Do not save what is left after spending</p> 
-			<p class="quote"><em>instead spend what is left after saving.”</em></p>
+			<p class="quote">“Do not save what is left after spending</p>
+			<p class="quote">
+				<em>instead spend what is left after saving.”</em>
+			</p>
 			<p class="warren">― Warren Buffett</p>
 			<a class="signup_button" href="/register">Sign Up</a>
 		</div>
 		<div class="right col">
-			<img class="money_img" src="https://media1.giphy.com/media/SKdWvkE1poQpuTwwMA/source.gif">
+			<img class="money_img"
+				src="https://media1.giphy.com/media/SKdWvkE1poQpuTwwMA/source.gif">
 		</div>
 	</div>
 </body>

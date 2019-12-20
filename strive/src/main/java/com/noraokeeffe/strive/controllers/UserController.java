@@ -32,7 +32,8 @@ public class UserController {
 	}
 	
 	@RequestMapping("/")
-	public String index() {
+	public String index(Model model, HttpSession session) {
+		model.addAttribute("user", session.getAttribute("loggedIn"));
 		return "strive/index.jsp";
 	}
 	
@@ -84,6 +85,7 @@ public class UserController {
 		 }
 		 else {
 			 session.setAttribute("user_id", user.getId());
+			 session.setAttribute("loggedIn", user);
 			 return "redirect:/home";
 		 }
 		 return loginPage();
