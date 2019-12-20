@@ -52,7 +52,19 @@
 		</p>
 	</div>
 	<div class="body col-5 d-inline-block">
-
+<<<<<<< HEAD
+		<p>Goal Expenses:</p>
+		<c:forEach items="${goal.goal_expenses}" var="goalExpense">
+			<p>
+				<c:out value="${goalExpense.name}" />
+				<c:out value="${goalExpense.amount}" />
+				<form action="/deleteGoalExpense" method="post">
+				<input type="hidden" name="_method" value="delete"> <input
+					type="submit" value="Delete">
+			</form> 
+			</p>
+		</c:forEach>
+=======
 		<h3>Goal Expenses:</h3>
 		<table>
 			<thead>
@@ -80,6 +92,7 @@
 
 
 		</table>
+>>>>>>> 644b9903ce1090e6bb0f76822fd1a096cca5c6ff
 	</div>
 </body>
 </html>
