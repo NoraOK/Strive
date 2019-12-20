@@ -27,7 +27,8 @@
 		<p class="main">
 			<c:out value="${goal.goalName}" />
 		</p>
-		<p>Created at:
+		<p>
+			Created at:
 			<fmt:formatDate pattern="MMMM dd, yyyy" value="${goal.createdAt}" />
 		</p>
 		<p class="labels">
@@ -51,17 +52,33 @@
 		</p>
 	</div>
 	<div class="body col-5 d-inline-block">
-		<p>Goal Expenses:</p>
-		<c:forEach items="${goal.goal_expenses}" var="goalExpense">
-			<p>
-				<c:out value="${goalExpense.name}" />
-				<c:out value="${goalExpense.amount}" />
-				<%-- 			<form action="/deleteGoalExpense" method="post">
+		<h3>Goal Expenses:</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Expense</th>
+					<th>Cost</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<c:forEach items="${goal.goal_expenses}" var="goalExpense">
+					<tr>
+						<td><c:out value="${goalExpense.name}" /></td>
+						<td><c:out value="${goalExpense.amount}" /></td>
+						<td>
+							<%-- 			<form action="/deleteGoalExpense" method="post">
 				<input type="hidden" name="_method" value="delete"> <input
 					type="submit" value="Delete">
 			</form> --%>
-			</p>
-		</c:forEach>
+						</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+
+
+		</table>
 	</div>
 </body>
 </html>
