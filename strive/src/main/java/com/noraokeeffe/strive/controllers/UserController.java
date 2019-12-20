@@ -7,12 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.noraokeeffe.strive.models.Goal;
 import com.noraokeeffe.strive.models.User;
 import com.noraokeeffe.strive.models.UserExpense;
 import com.noraokeeffe.strive.services.GoalService;
@@ -70,14 +70,14 @@ public class UserController {
 	 public String loginUser(@RequestParam("email") String email, @RequestParam("password") String password, Model model, HttpSession session) {
 	     // if the user is authenticated, save their user id in session
 	     // else, add error messages and return the login page
-		if(password.isEmpty() || email.isEmpty()) {
+		 if(password.isEmpty() || email.isEmpty()) {
 			model.addAttribute("error","Fields cannot be blank");
-			return "loginPage.jsp";
-		}
+			return "strive/login.jsp";
+		 }
 		 User user = userService.findByEmail(email);
 		 System.out.println(user);
 		 if (user == null) {
-			 model.addAttribute("error","No such User");
+			 model.addAttribute("error","User does not exist");
 		 }
 		 else if (!userService.authenticateUser(email, password)) {
 			 model.addAttribute("error","Invalid Password");
@@ -86,7 +86,7 @@ public class UserController {
 			 session.setAttribute("user_id", user.getId());
 			 return "redirect:/home";
 		 }
-		 return "loginPage.jsp";
+		 return loginPage();
 	 }
 	
 	@RequestMapping("/home")
@@ -98,7 +98,6 @@ public class UserController {
 		return "strive/userHome.jsp";
 	}
 		
-
 	@RequestMapping("/updateFinances")
 	public String iePage(HttpSession session, Model model, @ModelAttribute("userExpense") UserExpense user_expense ) {
 		Long userId = (Long) session.getAttribute("user_id");
@@ -117,10 +116,22 @@ public class UserController {
 		}
 	}
 	
+	@RequestMapping(value="/strive/updateFinances", method= RequestMethod.POST)
+	public String updateUserFinances(@Valid @RequestParam("currentBalance") Double currentBalance, @RequestParam("currentIncome") Double currentIncome, HttpSession session, Model model) {
+		Long userId = (Long) session.getAttribute("user_id");
+		User user = userService.findUserById(userId);
+		user.setCurrentBalance(currentBalance);
+		user.setCurrentIncome(currentIncome);
+		userService.updateUser(user);
+		return "redirect:/home";
+	}
+	
+	@RequestMapping(value="/deleteUserExpense/{id}", method=RequestMethod.DELETE)
+	public String removeUserExpense(@PathVariable("id") Long id) {
+		UserExpense u_e = userExpenseService.findUserExpenseById(id);
+		userExpenseService.deleteUserExpense(u_e);
+		return "redirect:/updateFinances";
+	}
 
-	
-
-	
-	
 	
 }

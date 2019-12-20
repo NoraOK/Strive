@@ -24,7 +24,12 @@
 		<p>Update your finances regularly to ensure you are on top of your financial goals</p>
 		<p>Monthly Expenses:</p>
 		<c:forEach items="${user.user_expenses}" var="userExpense">
-			<p><c:out value="${userExpense.name}"/>  <c:out value="${userExpense.amount}"/> <a>Delete</a></p>
+			<p><c:out value="${userExpense.name}"/>  <c:out value="${userExpense.amount}"/> 
+				<form action="/deleteUserExpense/${userExpense.id}" method="post">
+					<input type="hidden" name="_method" value="delete">
+					<input type="submit" value="Delete">
+				</form>
+			</p>
 		</c:forEach>
 		<p>Total: <c:out value="${user.totalUserExpense}"/></p>
 		<form:form action="/addUserExpense" method="post" modelAttribute="userExpense">
@@ -35,17 +40,17 @@
 			<form:input path="amount" type="text" class="form-control"/>
 			<input type="submit" value="Add"/>
 		</form:form>
-		<form action="/updateFinances" method="post">
+		<form action="/strive/updateFinances" method="post">
 			<p>
 				<label class="lead col-form-label">Current Savings: </label>
-				<input name="currentBalance" type="text" class="form-control" />
+				<input name="currentBalance" type="number" class="form-control" />
 			</p>
 			<p>
 				<label class="lead col-form-label">Monthly Income: </label>
-				<input name="currentIncome" type="text" class="form-control" />
+				<input name="currentIncome" type="number" class="form-control" />
 			</p>
 			<input class="btn btn-info" type="submit" value="Submit" />
-			<a class="btn btn-warning" href="/userHome">Cancel</a>
+			<a class="btn btn-warning" href="/home">Cancel</a>
 		</form>
 	</div>
 </body>

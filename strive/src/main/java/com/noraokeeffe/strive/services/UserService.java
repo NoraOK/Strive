@@ -15,7 +15,9 @@ public class UserService {
 	public UserService(UserRepo userRepo) {
 		this.userRepo = userRepo;
 	}
-	
+	public User updateUser(User user) {
+        return userRepo.save(user);
+    }
 	public User registerUser(User user) {
         String hashed = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
         user.setPassword(hashed);

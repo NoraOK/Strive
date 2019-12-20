@@ -36,4 +36,7 @@ public class GoalController {
 		goalService.createGoal(goal);
 		return "redirct:/newGoal";
 	}
-}
+	
+
+}	
+

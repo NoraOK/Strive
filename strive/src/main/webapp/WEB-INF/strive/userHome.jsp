@@ -21,12 +21,35 @@
 	<div class="body container col-7">
 		<div class="info">
 			<p class="welcome"> Welcome <c:out value="${user.firstName}"/></p>
-			<p class="labels">Current Savings</p> 
-			<p class="fig">$ <c:out value="${user.currentBalance}"/> </p>
-			<p class="labels">Current Income (Monthly)</p> 
-			<p class="fig inc">$ <c:out value="${user.currentIncome}"/> </p>
-			<p class="labels">Current Expenses (Monthly)</p> 
-			<p class="fig exp">$ <c:out value="${user.currentIncome}"/></p>
+			<c:choose>
+				<c:when test="${user.currentBalance == null || user.currentIncome == null }">
+					<p class="labels">Current Savings</p> 
+					<p class="fig">Click below to add your current savings.</p>
+					<p class="labels">Current Income (Monthly)</p> 
+					<p class="fig inc">Click below to update your current income.</p>
+					<p class="labels">Current Expenses (Monthly)</p> 
+					<p class="fig exp">Click below to update your current expenses.</p>
+					<p class="labels">Net Income (Monthly)</p> 	
+					<p class="fig netinc pos">$0</p>
+				</c:when>
+				<c:otherwise>
+					<p class="labels">Current Savings</p> 
+					<p class="fig">$ <c:out value="${user.currentBalance}"/> </p>
+					<p class="labels">Current Income (Monthly)</p> 
+					<p class="fig inc">$ <c:out value="${user.currentIncome}"/> </p>
+					<p class="labels">Current Expenses (Monthly)</p> 
+					<p class="fig exp">$ <c:out value="${user.totalUserExpense}"/></p>
+					<p class="labels">Net Income (Monthly)</p> 	
+					<c:choose>
+						<c:when test="${user.incomeLessExpense > 0}">		
+							<p class="fig netinc pos">$<c:out value="${user.incomeLessExpense}"/></p>
+						</c:when>
+						<c:otherwise>
+							<p class="fig netinc neg">$<c:out value="${user.incomeLessExpense}"/></p>
+						</c:otherwise>
+					</c:choose>
+				</c:otherwise>
+			</c:choose>
 		</div>
 		<p class="one"><a href="/updateFinances" class="button1">Update personal finances</a></p>
 		<p class="two"><a href="/goals" class="button1">Goals</a></p>

@@ -19,7 +19,7 @@
 		<img class="water_img col" src="/images/water.jpg">
 		<div class="login col">
 			<p class="welcome">Welcome to Strive</p>
-			<p><c:out value="${error}" /></p>
+			<p><c:out value="${error}"/></p>
     		<form method="post" action="/login">
 		        <p>
 		            <p class="label">Email</p>
