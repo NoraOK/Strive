@@ -1,31 +1,8 @@
-.body {
-	padding-top: 200px;
-    position: relative;
-    overflow: hidden;
-    height: 2200px;
-    font-family:'Nunito', sans-serif;
-    
+.body{
+	padding-top: 150px;
+	font-family: 'Nunito', sans-serif;
+	text-align:center;
 }
-
-.body img {
-	background-color: rgba(232,114,17,1.0);
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 1500px;
-    opacity: 0.4;
-}
-
-.spotlight{
-	background-color: white;
-	border-radius: 10px;
-	box-shadow: 1px 1px 6px;
-	padding: 50px;
-	text-align: center;
-	
-}
-
 
 .button1{
 	border:2px solid #EF8F63 ;
@@ -59,7 +36,7 @@
 
 .labels{
 	font-weight: 200;
-	font-size: 25px;
+	font-size: 35px;
 }
 
 .inc{
@@ -70,6 +47,6 @@
 }
 
 .fig{
-	font-size: 35px;
+	font-size: 45px;
 }
 

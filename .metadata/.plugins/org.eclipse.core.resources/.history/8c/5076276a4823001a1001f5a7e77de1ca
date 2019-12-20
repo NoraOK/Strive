@@ -20,7 +20,7 @@
 	</div>
 	<div class="body">
 		<img src="/images/sunset.jpg">
-		<div class="container col-8 spotlight">
+		<div class="container col-5 spotlight">
 			<p class="welcome"> Welcome <c:out value="${user.firstName}"/></p>
 			<c:choose>
 				<c:when test="${user.currentBalance == null || user.currentIncome == null }">

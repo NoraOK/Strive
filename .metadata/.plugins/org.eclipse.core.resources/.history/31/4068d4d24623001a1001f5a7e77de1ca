@@ -18,9 +18,8 @@
 	<div>
 		<jsp:include page="header.jsp"/>
 	</div>
-	<div class="body">
-		<img src="/images/sunset.jpg">
-		<div class="container col-8 spotlight">
+	<div class="body container col-7">
+		<div class="info">
 			<p class="welcome"> Welcome <c:out value="${user.firstName}"/></p>
 			<c:choose>
 				<c:when test="${user.currentBalance == null || user.currentIncome == null }">
@@ -51,10 +50,9 @@
 					</c:choose>
 				</c:otherwise>
 			</c:choose>
-			<a href="/updateFinances" class="button1 one col btn-lg">Update Personal Finances</a>
-			<a href="/newGoal" class="button1 two col btn-lg">Set New Goals</a>
 		</div>
-
+		<p class="one"><a href="/updateFinances" class="button1">Update personal finances</a></p>
+		<p class="two"><a href="/newGoal" class="button1">Goals</a></p>
 	</div>
 </body>
 </html>
