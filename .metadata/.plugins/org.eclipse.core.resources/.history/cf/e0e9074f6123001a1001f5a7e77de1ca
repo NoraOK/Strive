@@ -45,34 +45,21 @@ a:hover {
 }
 
 .logout_button{
-	color: black;
-	text-decoration: none;
-}
-.logout_button:hover{
-	background-color: #F9AD86;
-	border-radius: 8px;
-	color: white;
-	text-decoration: none;
-	padding: 8px;
-}
-
-.home_button{
-	background-color: #F9AD86;
+	border: solid 1.5px #F9AD86;
 	border-radius: 8px;
 	padding:  8px;
-	color: white;
+	color: black;
 }
 
-.home_button:hover {
-	color: black;
-	border: solid 1.5px #F9AD86;
-	background-color: white;
+.logout_button:hover {
+	background-color: #F9AD86;
+	color: white;
 }
 
 .buttons{
 	margin-left: 50%;
 }
 
-.index_button{
+.home_button{
 	color: black;
 }

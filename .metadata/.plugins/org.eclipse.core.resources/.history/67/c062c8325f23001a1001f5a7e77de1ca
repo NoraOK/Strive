@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 import java.time.temporal.ChronoUnit;
 
 import com.noraokeeffe.strive.models.Goal;
-import com.noraokeeffe.strive.models.GoalExpense;
 import com.noraokeeffe.strive.respositories.GoalRepo;
 
 @Service
@@ -27,8 +26,5 @@ public class GoalService {
 		goal.setGoalResult("Set aside " +dollar_amt+ " each week for " + goal.getDuration()+ " week(s)");
 		
 		return goal;
-	}
-	public void deleteGoal(Goal goal) {
-		goalRepo.delete(goal);
 	}
 }

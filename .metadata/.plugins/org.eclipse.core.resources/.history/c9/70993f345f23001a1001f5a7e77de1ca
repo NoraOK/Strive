@@ -97,11 +97,7 @@ public class GoalController {
 	}
 	
 	@RequestMapping(value="/deleteGoal/{id}", method=RequestMethod.DELETE)
-	public String removeGoal(@PathVariable("id") Long id) {
-		Goal goal = goalService.findGoalById(id);
-		goalService.deleteGoal(goal);
-		return "redirect:/allGoals";
-	}
+	public String removeGoal(@PathVariable("id") Long id)
 
 }	
 

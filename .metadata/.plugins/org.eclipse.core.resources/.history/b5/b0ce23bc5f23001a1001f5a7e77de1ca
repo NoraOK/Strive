@@ -64,8 +64,13 @@
 				<form:form action="/addGoalExpense" method="post"
 					modelAttribute="goalExpense">
 					<form:hidden path="goal" value="${goal.id}" />
-					<form:input path="name" type="text" class="form-control" placeholder="Expense"/>
-					<form:input path="amount" type="text" class="form-control" placeholder="Amount" />
+					<form:label path="name">Expense: <form:input
+							path="name" type="text" class="form-control" />
+					</form:label>
+
+					<form:label path="amount">Amount:  <form:input
+							path="amount" type="text" class="form-control" />
+					</form:label>
 					<input class="button2" type="submit" value="Add" />
 				</form:form>
 			</p>
@@ -86,7 +91,7 @@
 					<c:forEach items="${goal.goal_expenses}" var="goalExpense">
 						<tr>
 							<td><c:out value="${goalExpense.name}" /></td>
-							<td><fmt:formatNumber value="${goalExpense.amount}" type="currency" /></td>
+							<td><c:out value="${goalExpense.amount}" /></td>
 							<td>
 								<form action="/deleteGoalExpense/${goalExpense.id}"
 									method="post">

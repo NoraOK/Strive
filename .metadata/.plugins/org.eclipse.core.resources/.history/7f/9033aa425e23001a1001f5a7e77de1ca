@@ -95,13 +95,6 @@ public class GoalController {
 		model.addAttribute("user", user);
 		return "strive/allGoals.jsp";
 	}
-	
-	@RequestMapping(value="/deleteGoal/{id}", method=RequestMethod.DELETE)
-	public String removeGoal(@PathVariable("id") Long id) {
-		Goal goal = goalService.findGoalById(id);
-		goalService.deleteGoal(goal);
-		return "redirect:/allGoals";
-	}
 
 }	
 

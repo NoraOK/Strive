@@ -37,7 +37,7 @@
 .spotlight .h1{
 	font-size: 30px;
 	font-weight: 200;
-	padding-left: 50px;
+	padding-left: 40px;
 }
 .button2{
 	background-color: #F9AD86;

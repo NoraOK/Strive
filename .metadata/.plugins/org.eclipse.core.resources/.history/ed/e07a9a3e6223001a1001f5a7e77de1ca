@@ -58,15 +58,16 @@ a:hover {
 
 .home_button{
 	background-color: #F9AD86;
+	
 	border-radius: 8px;
 	padding:  8px;
-	color: white;
+	color: black;
 }
 
 .home_button:hover {
-	color: black;
+	color: white;
 	border: solid 1.5px #F9AD86;
-	background-color: white;
+	
 }
 
 .buttons{

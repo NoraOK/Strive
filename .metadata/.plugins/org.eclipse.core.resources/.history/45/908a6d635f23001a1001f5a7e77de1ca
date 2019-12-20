@@ -37,7 +37,7 @@
 					<c:forEach items="${user.goals}" var="goal">
 						<tr>
 							<td><a href="/oneGoal/${goal.id}"><c:out value="${goal.goalName}"/></a></td>
-							<td><fmt:formatNumber value="${goal.totalGoalExpense}" type="currency"/></td>
+							<td><c:out value="${goal.totalGoalExpense}"/></td>
 							<td><fmt:formatDate pattern="MMMM dd, yyyy" value="${goal.deadline}"/></td>
 							<td>
 								<form action="/deleteGoal/${goal.id}" method="post">

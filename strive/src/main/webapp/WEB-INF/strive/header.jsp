@@ -26,6 +26,7 @@
 			</div>
 		</div>
 		<div class="buttons d-inline">	
+			<a href="/home" class="home_button">Home</a>
 			<a href="/logout" class="logout_button">Logout</a>
 		</div>
 	</header>

@@ -12,7 +12,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
+    width: 50%;
     height: 1500px;
     opacity: 0.4;
 }
@@ -37,7 +37,6 @@
 .spotlight .h1{
 	font-size: 30px;
 	font-weight: 200;
-	padding-left: 50px;
 }
 .button2{
 	background-color: #F9AD86;
