@@ -27,7 +27,6 @@ public class GoalExpense {
 	@Size(min=1, message="Please enter an expense")
 	private String name;
 	
-	@Size(min=1, message="Please enter an amount")
 	private Double amount;
 	
 	@Column(updatable=false)

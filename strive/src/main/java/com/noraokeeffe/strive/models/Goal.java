@@ -1,5 +1,6 @@
 package com.noraokeeffe.strive.models;
 
+
 import java.util.Date;
 import java.util.List;
 
@@ -15,6 +16,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -37,6 +39,9 @@ public class Goal {
 	 private Date deadline;
 	 	 
 	 private String goalResult;
+	 
+	 @Transient
+	 private int duration;
 	 
 	 @Column(updatable=false)
      @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -120,6 +125,30 @@ public class Goal {
     protected void onUpdate(){
         this.updatedAt = new Date();
     }
+
+	public int getDuration() {
+		return duration;
+	}
+
+	public void setDuration(int duration) {
+		this.duration = duration;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
 	 
 	 
 	 

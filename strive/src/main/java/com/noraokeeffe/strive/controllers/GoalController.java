@@ -69,11 +69,10 @@ public class GoalController {
 			Long userId = (Long) session.getAttribute("user_id");
 			User user = userService.findUserById(userId);
 			model.addAttribute("User", user);
-
-			return "redirect:/newGoal";
+			return readOneGoal(session, model, goalExpense.getGoal().getId(), goalExpense);
 		} else {
 			goalExpenseService.createGoalExpense(goalExpense);
-			return "redirect:/oneGoal/" + goalExpense.getId();
+			return "redirect:/oneGoal/" + goalExpense.getGoal().getId();
 		}
 	}
 }
