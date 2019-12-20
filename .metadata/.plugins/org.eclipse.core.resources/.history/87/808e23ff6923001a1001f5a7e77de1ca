@@ -54,9 +54,9 @@
 					</c:when>
 					<c:otherwise>
 						<p>
-							<span class="labels">Goal Plan:</span></p>
+							<span class="labels">Goal Result:</span>
 							<c:out value="${goal.goalResult}" />
-						
+						</p>
 					</c:otherwise>
 				</c:choose>
 			</p>
