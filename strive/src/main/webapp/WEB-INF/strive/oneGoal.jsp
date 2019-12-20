@@ -24,9 +24,9 @@
 	</div>
 	<div class="body col-5 d-inline-block" align="left">
 		<c:out value="${goal.user}"></c:out>
-		<p class="main">
+		<h1 class="main">
 			<c:out value="${goal.goalName}" />
-		</p>
+		</h1>
 		<p>
 			Created at:
 			<fmt:formatDate pattern="MMMM dd, yyyy" value="${goal.createdAt}" />
