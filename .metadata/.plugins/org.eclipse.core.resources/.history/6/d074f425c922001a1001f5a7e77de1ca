@@ -11,12 +11,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.noraokeeffe.strive.models.Goal;
 import com.noraokeeffe.strive.models.GoalExpense;
 import com.noraokeeffe.strive.models.User;
-import com.noraokeeffe.strive.models.UserExpense;
 import com.noraokeeffe.strive.services.GoalExpenseService;
 import com.noraokeeffe.strive.services.GoalService;
 import com.noraokeeffe.strive.services.UserService;
@@ -76,13 +74,6 @@ public class GoalController {
 			goalExpenseService.createGoalExpense(goalExpense);
 			return "redirect:/oneGoal/" + goalExpense.getGoal().getId();
 		}
-	}
-	
-	@RequestMapping(value="/deleteGoalExpense/{id}", method=RequestMethod.DELETE)
-	public String removeGoalExpense(@PathVariable("id") Long id) {
-		GoalExpense g_e = goalExpenseService.findGoalExpenseById(id);
-		goalExpenseService.deleteGoalExpense(g_e);
-		return "redirect:/oneGoal/" + g_e.getGoal().getId();
 	}
 	
 	

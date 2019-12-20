@@ -56,10 +56,10 @@
 			<p>
 				<c:out value="${goalExpense.name}" />
 				<c:out value="${goalExpense.amount}" />
-				<form action="/deleteGoalExpense" method="post">
+				<%-- 			<form action="/deleteGoalExpense" method="post">
 				<input type="hidden" name="_method" value="delete"> <input
 					type="submit" value="Delete">
-			</form> 
+			</form> --%>
 			</p>
 		</c:forEach>
 	</div>
