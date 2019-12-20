@@ -7,6 +7,10 @@ header{
     font-family:'Nunito', sans-serif;
     background-color: white;
 }
+.strive{
+	text-decoration: none;
+	color: black;
+}
 
 .logo{
 	font-size: 38px;

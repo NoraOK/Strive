@@ -12,7 +12,7 @@
 <body>
 	<header class="p-3">
 		<div class="logo d-inline">
-			<a class="d-inline" href="/">Strive <img class="header_img" src="/images/icon2.png" alt=""></a>
+			<a class="d-inline strive" href="/">Strive <img class="header_img" src="/images/icon2.png" alt=""></a>
 			<div class="d-inline links pl-5">
 				<a class="d-inline link" href="">About</a>
 				<a class="d-inline link pl-3" href="/feed">News Feed</a>

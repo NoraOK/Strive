@@ -18,7 +18,7 @@
 	</div>
 	<div class="body">
 	<img src="/images/fire_sunset.jpg">
-	<div class="container col-5 spotlight">
+	<div class="container col-8 spotlight p-5">
 		<div class="h1">
 			<p >Set Goals.</p>
 			<p>Follow Through.</p> 

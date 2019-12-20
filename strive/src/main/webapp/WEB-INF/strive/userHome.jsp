@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
@@ -31,22 +32,22 @@
 					<p class="labels">Current Expenses (Monthly)</p> 
 					<p class="fig exp">Click below to update your current expenses.</p>
 					<p class="labels">Net Income (Monthly)</p> 	
-					<p class="fig netinc pos">$0</p>
+					<p class="fig netinc ">$ 0</p>
 				</c:when>
 				<c:otherwise>
 					<p class="labels">Current Savings</p> 
-					<p class="fig">$ <c:out value="${user.currentBalance}"/> </p>
+					<p class="fig"> <fmt:formatNumber value="${user.currentBalance}" type="currency"/> </p>
 					<p class="labels">Current Income (Monthly)</p> 
-					<p class="fig inc">$ <c:out value="${user.currentIncome}"/> </p>
+					<p class="fig inc"> <fmt:formatNumber value="${user.currentIncome}" type="currency"/> </p>
 					<p class="labels">Current Expenses (Monthly)</p> 
-					<p class="fig exp">$ <c:out value="${user.totalUserExpense}"/></p>
+					<p class="fig exp"> <fmt:formatNumber value="${user.totalUserExpense}" type="currency"/></p>
 					<p class="labels">Net Income (Monthly)</p> 	
 					<c:choose>
 						<c:when test="${user.incomeLessExpense > 0}">		
-							<p class="fig netinc pos">$<c:out value="${user.incomeLessExpense}"/></p>
+							<p class="fig netinc pos"><fmt:formatNumber value="${user.incomeLessExpense}" type="currency"/></p>
 						</c:when>
 						<c:otherwise>
-							<p class="fig netinc neg">$<c:out value="${user.incomeLessExpense}"/></p>
+							<p class="fig netinc neg"><fmt:formatNumber value="${user.incomeLessExpense}"  type="currency"/></p>
 						</c:otherwise>
 					</c:choose>
 				</c:otherwise>

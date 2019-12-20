@@ -1,0 +1,76 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Strive | Personal Finances</title>
+	<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+	<link href="/css/ie.css" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Nunito:200,400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div>
+		<jsp:include page="header.jsp"/>
+	</div>
+	<div class="body">
+		<img src="/images/flowers.jpg">
+		<div class="container col-10 spotlight">
+		<p class="h11">Keep your finances up-to-date</p>
+		<p class="h11">to help keep you on track</p>
+		<p class="label">Monthly Expenses:</p>
+		<table class="table col-4">
+			<tbody>
+			
+				<c:forEach items="${user.user_expenses}" var="userExpense">
+					<tr>
+					<td><c:out value="${userExpense.name}"/></td>  
+					<td><fmt:formatNumber value="${userExpense.amount}" type="currency"/></td>
+					<td>
+						<form action="/deleteUserExpense/${userExpense.id}" method="post">
+							<input type="hidden" name="_method" value="delete">
+							<input type="submit" value="Delete">
+						</form>
+					</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+		<p >Total expenses: <fmt:formatNumber value="${user.totalUserExpense}" type="currency"/></p>
+		<form:form action="/addUserExpense" method="post" modelAttribute="userExpense" class="row">
+			<form:hidden path="user" value="${user.id}"/>
+			<div class="col">
+				<form:label path="name" >Expense:</form:label>
+				<form:input path="name" type="text" class="form-control"/>
+			</div>
+			<div class="col">
+				<form:label path="amount">Amount:</form:label>
+				<form:input path="amount" type="text" class="form-control"/>
+			</div>
+				<input type="submit" value="Add"/>
+		</form:form>
+		<form action="/strive/updateFinances" method="post">
+			<p>
+				<label class="label">Monthly Income: </label>
+				<input name="currentIncome" type="number" class="form-control" />
+			</p>
+			<p>
+				<label class="label">Current Savings: </label>
+				<input name="currentBalance" type="number" class="form-control" />
+			</p>
+
+			<input class="" type="submit" value="Submit" />
+			<a class="" href="/home">Cancel</a>
+		</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -52,6 +52,10 @@ a:hover {
 	background-color: #F9AD86;
 	color: white;
 }
+.strive{
+	text-decoration: none;
+	color: black;
+}
 
 .buttons{
 	margin-left: 55%;
