@@ -39,7 +39,7 @@
 			</p>
 			<p align="right">
 			<input type="submit" value="Submit" class="button2"/>
-			<a class="button2" href="/userHome">Cancel</a>
+			<a class="button2" href="/home">Cancel</a>
 			</p>
 		</form:form>
 	</div>

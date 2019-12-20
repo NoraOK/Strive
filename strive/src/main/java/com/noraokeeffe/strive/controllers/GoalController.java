@@ -93,6 +93,7 @@ public class GoalController {
 		Long userId = (Long) session.getAttribute("user_id");
 		User user = userService.findUserById(userId);
 		model.addAttribute("user", user);
+		
 		return "strive/allGoals.jsp";
 	}
 	
